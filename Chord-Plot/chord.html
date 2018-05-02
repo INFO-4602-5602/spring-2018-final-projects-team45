@@ -152,7 +152,8 @@
         year_chord_groups = [];
         yearMap = {};
         map_index = -1;
-        var mmap_keys = Object.keys(mmap);        
+        var mmap_keys = Object.keys(mmap);     
+        var themeIndexes = {};   
         chord.groups().forEach(function(d,i) {
           if (!yearMap[mmap[mmap_keys[i]].data[1]]) {
             ++map_index;
@@ -161,7 +162,13 @@
           else {
             yearMap[mmap[mmap_keys[i]].data[1]].endAngle = d.endAngle;
           }          
-
+          var name = mmap_keys[i].substring(mmap_keys[i].indexOf("-")+1)
+          if(!themeIndexes[name]) {
+            themeIndexes[name] = [];
+            themeIndexes[name].push(i);
+          }
+          else
+            themeIndexes[name].push(i);
         });
 
         //console.log(yearMap);
@@ -169,9 +176,9 @@
           //console.log(new_m);
           year_chord_groups.push(yearMap[d]);
         })
-
+        
         console.log(chord.groups());
-        console.log(chord.chords());
+        console.log(mmap);        
 
         var outerCircle_g = outersvg.selectAll("g.group")
             .data(year_chord_groups)
@@ -300,6 +307,7 @@
                 .data(chord.chords())
               .enter().append("svg:path")
                 .attr("class", "chord")
+                .attr("id",function(d) { return d.source.index+"-"+d.target.index; })
                 .style("stroke", function(d) { return d3.rgb(fill(d.target.index)).darker(); })
                 .style("fill", function(d) { return fill(d.target.index); })
                 .attr("d", d3.svg.chord().radius(r0))
@@ -312,10 +320,12 @@
                 })
                 .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
 
-          function chordTip (d) {
-            var p = d3.format(".0%"), q = d3.format("0d")
-            return "Chord info:<br/>"
-              + q(d.svalue) + " years overlap with " + d.sname + " and " + d.tname
+          function chordTip (d) {                        
+            diff = d.sdata[0] - d.tdata[0];
+            console.log(d);
+            return d.sname+": "+d.sdata[0]+"<br/>" +
+                   d.tname+": "+d.tdata[0]+"<br/>" + 
+                   "Difference: " + Math.abs(diff);
           }
 
           function mouseover(d, i) {
@@ -335,8 +345,12 @@
 
           function onclick(d,i) {
             if(clicked == 0) {
+              name = rdr(d).gname; 
+              name = name.substring(name.indexOf("-")+1);   
+              console.log(themeIndexes[name]);           
               chordPaths.classed("fade", function(p) {
-                return p.source.index != i && p.target.index != i;
+                console.log(d3.select(this).attr("id"), !(p.source.index in themeIndexes[name] || p.target.index in themeIndexes[name]));
+                return !(themeIndexes[name].includes(p.source.index) || themeIndexes[name].includes(p.target.index));
               });
             }
           }
