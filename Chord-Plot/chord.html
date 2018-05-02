@@ -41,6 +41,7 @@
   <body>
     <section id="diagram"></section>
     <div id="tooltip"></div>
+    <svg height="6" width="6" xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <pattern id="whitecarbon" patternUnits="userSpaceOnUse" width="6" height="6"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNicgaGVpZ2h0PSc2Jz4KICA8cmVjdCB3aWR0aD0nNicgaGVpZ2h0PSc2JyBmaWxsPScjZWVlZWVlJy8+CiAgPGcgaWQ9J2MnPgogICAgPHJlY3Qgd2lkdGg9JzMnIGhlaWdodD0nMycgZmlsbD0nI2U2ZTZlNicvPgogICAgPHJlY3QgeT0nMScgd2lkdGg9JzMnIGhlaWdodD0nMicgZmlsbD0nI2Q4ZDhkOCcvPgogIDwvZz4KICA8dXNlIHhsaW5rOmhyZWY9JyNjJyB4PSczJyB5PSczJy8+Cjwvc3ZnPg==" x="0" y="0" width="6" height="6"> </image> </pattern> </defs> </svg>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="mapper.js"></script>
@@ -49,14 +50,15 @@
       //  CREATE MATRIX AND MAP
       //*******************************************************************
       var fullData, PopularThemes;
+      var clicked = 0;
 
-      filterData(10,2010,2018);
+      filterData(4,2014,2018);
 
       function filterData(topN, yearBegin, yearEnd) {
 
-        d3.csv('Full_Cleaned_Data.csv', function (error, data) {
+        d3.csv('data/Full_Cleaned_Data.csv', function (error, data) {
 
-          d3.csv('PopularThemes.csv', function (error, pThemes) {
+          d3.csv('data/PopularThemes.csv', function (error, pThemes) {
 
             fullData = data;
             PopularThemes = pThemes;
@@ -91,11 +93,10 @@
       function plotData(data) {
 
                       
-        var mpr = chordMpr(data);
-
+        var mpr = chordMpr(data);        
 
         mpr
-          .addValuesToMap('ThemeName1', 'SetCount1')
+          .addValuesToMap('ThemeName1', ['SetCount1', 'Year1'])
           .setFilter(function (row, a, b) {
             return (row.ThemeName1 === a.name && row.ThemeName2 === b.name)
           })
@@ -103,6 +104,10 @@
             if (!recs[0]) return 0;
             return +recs[0].NormalizedDiff;
           });
+
+
+        console.log(mpr.getMap());
+
         drawChords(mpr.getMatrix(), mpr.getMap());
  
       }
@@ -110,38 +115,167 @@
       //  DRAW THE CHORD DIAGRAM
       //*******************************************************************
       function drawChords (matrix, mmap) {
-        var w = 980, h = 800, r1 = h / 2, r0 = r1 - 100;
+        var w = 980, h = 800, margin = 60, r1 = (h-margin) / 2, r0 = r1 - 100;
+        var outer_r0 = r0 + 30;
 
         var fill = d3.scale.category10();
 
         var chord = d3.layout.chord()
             .padding(.02)
             .sortSubgroups(d3.descending)
-            .sortChords(d3.descending);
+            .sortChords(d3.descending);        
+
+        var outerArc = d3.svg.arc()
+            .innerRadius(outer_r0)
+            .outerRadius(outer_r0 + 20);
 
         var arc = d3.svg.arc()
             .innerRadius(r0)
             .outerRadius(r0 + 20);
 
-        var svg = d3.select("#diagram").append("svg")
+        var rdr = chordRdr(matrix, mmap);
+          chord.matrix(matrix);
+        
+
+        var mainsvg = d3.select("#diagram").append("svg")
             .attr("width", w)
-            .attr("height", h)
-          .append("svg:g")
-            .attr("id", "circle")
-            .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
+            .attr("height", h);
+
+        var outersvg = mainsvg.append("svg:g")
+                  .attr("id", "circle")
+                  .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
+                  
+            outersvg.append("circle")
+                    .attr("r", r0 + 80);
+              
+
+        year_chord_groups = [];
+        yearMap = {};
+        map_index = -1;
+        var mmap_keys = Object.keys(mmap);        
+        chord.groups().forEach(function(d,i) {
+          if (!yearMap[mmap[mmap_keys[i]].data[1]]) {
+            ++map_index;
+            yearMap[mmap[mmap_keys[i]].data[1]] = {index: map_index, startAngle: d.startAngle, endAngle:d.endAngle, value:0, angle:0, data: mmap[mmap_keys[i]].data[1]};
+          }
+          else {
+            yearMap[mmap[mmap_keys[i]].data[1]].endAngle = d.endAngle;
+          }          
+
+        });
+
+        //console.log(yearMap);
+        Object.keys(yearMap).forEach(function(d,i) {
+          //console.log(new_m);
+          year_chord_groups.push(yearMap[d]);
+        })
+
+        console.log(chord.groups());
+        console.log(chord.chords());
+
+        var outerCircle_g = outersvg.selectAll("g.group")
+            .data(year_chord_groups)
+          .enter().append("svg:g")
+            .attr("class", "group")            
+            .on("mouseover", function(d,i) {
+                d3.select("#tooltip")
+                  .style("visibility", "visible")
+                  .html(d.data)
+                  .style("top", function () { return (d3.event.pageY - 40)+"px"})
+                  .style("left", function () { return (d3.event.pageX - 80)+"px";})
+            })
+            .on("mousemove", function(d,i) {
+                d3.select("#tooltip")
+                  .style("top", function () { return (d3.event.pageY - 40)+"px"})
+                  .style("left", function () { return (d3.event.pageX - 80)+"px";})
+            })
+            .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
+
+        outerCircle_g.append("svg:path")
+            .attr("id",function(d,i) { return "yearArc_"+i; })
+            .style("stroke-width", "1")
+            .style("stroke", "black")
+            //.style("fill", "white")
+            .style("fill", "url(#whitecarbon)")
+            //.style()
+            .attr("d", outerArc)
+            .each(function(d,i) {
+              //Search pattern for everything between the start and the first capital L
+              var firstArcSection = /(^.+?)L/;
+
+              //Grab everything up to the first Line statement
+              var newArc = firstArcSection.exec( d3.select(this).attr("d") )[1];
+              //Replace all the commas so that IE can handle it
+              newArc = newArc.replace(/,/g , " ");
+
+              //If the end angle lies beyond a quarter of a circle (90 degrees or pi/2)
+              //flip the end and start position
+              if (d.endAngle > 90 * Math.PI/180) {
+                  //Everything between the capital M and first capital A
+                  var startLoc = /M(.*?)A/;
+                  //Everything between the capital A and 0 0 1
+                  var middleLoc = /A(.*?)0 0 1/;
+                  //Everything between the 0 0 1 and the end of the string (denoted by $)
+                  var endLoc = /0 0 1 (.*?)$/;
+                  //Flip the direction of the arc by switching the start and end point
+                  //and using a 0 (instead of 1) sweep flag
+                  var newStart = endLoc.exec( newArc )[1];
+                  var newEnd = startLoc.exec( newArc )[1];
+                  var middleSec = middleLoc.exec( newArc )[1];
+
+                  //Build up the new arc notation, set the sweep-flag to 0
+                  newArc = "M" + newStart + "A" + middleSec + "0 0 0 " + newEnd;
+              }
+
+              //Create a new invisible arc that the text can flow along
+              outersvg.append("path")
+                  .attr("class", "hiddenArcs")
+                  .attr("id", "hiddenArc"+i)
+                  .attr("d", newArc)
+                  //.style("fill", "url(#diagonal-stripe-1)");
+                  .style("fill", "none");
+
+            });          
+
+        outerCircle_g.append("svg:text")
+            .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; d.x = (d.endAngle - d.startAngle)*outer_r0; })
+            .attr("x", function(d) { return d.x/2; })
+            //.attr("dy", 15)
+            //.attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })     
+            //.attr("transform", function(d) {
+            //  return "rotate(" + ((d.angle > 2*Math.PI/4 && d.angle < 2*Math.PI*3/4)? "180":"0") + ")";                  
+            //})       
+            .attr("dy", function(d,i) {
+                return ((d.angle > 2*Math.PI/4 && d.angle < 2*Math.PI*3/4)? -5 : 15);
+            })
+            .append("textPath")
+            //.attr("xlink:href", function(d,i) { return "#yearArc_"+i; })
+            //.attr("startOffset","50%")
+            .style("text-anchor","middle")
+            .attr("xlink:href",function(d,i){return ((d.angle > 2*Math.PI/4 && d.angle < 2*Math.PI*3/4)? "#hiddenArc"+i:"#yearArc_"+i);})
+            .text(function(d) { return d.data; })
+            .attr("font-size", "18px")
+            .attr("font-weight", "bold");
+
+        var svg = mainsvg.append("svg:g")
+                .attr("id", "circle")
+                .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
 
             svg.append("circle")
-                .attr("r", r0 + 20);
-
-        var rdr = chordRdr(matrix, mmap);
-        chord.matrix(matrix);
+               .attr("r", r0 + 20);
 
         var g = svg.selectAll("g.group")
             .data(chord.groups())
           .enter().append("svg:g")
             .attr("class", "group")
             .on("mouseover", mouseover)
-            .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
+            .on("mousemove", function(d,i) {
+                d3.select("#tooltip")
+                  .style("top", function () { return (d3.event.pageY - 50)+"px"})
+                  .style("left", function () { return (d3.event.pageX - 90)+"px";})
+            })
+            .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") })
+            .on("click", onclick);
 
         g.append("svg:path")
             .style("stroke", "none")
@@ -149,15 +283,18 @@
             .attr("d", arc);
 
         g.append("svg:text")
-            .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })
+            .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2;})
             .attr("dy", ".35em")
             .attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
             .attr("transform", function(d) {
               return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
-                  + "translate(" + (r0 + 26) + ")"
+                  + "translate(" + (r0 + 60) + ")"
                   + (d.angle > Math.PI ? "rotate(180)" : "");
             })
-            .text(function(d) { return rdr(d).gname; });
+            .text(function(d) { 
+              name = rdr(d).gname; 
+              return name.substring(name.indexOf("-")+1); 
+            });
 
           var chordPaths = svg.selectAll("path.chord")
                 .data(chord.chords())
@@ -181,25 +318,27 @@
               + q(d.svalue) + " years overlap with " + d.sname + " and " + d.tname
           }
 
-          function groupTip (d) {
-            var q = d3.format("0d");
-            console.log(d);
-            return d.gname+': '+d.gdata;
-
-            
-          }
-
           function mouseover(d, i) {
             d3.select("#tooltip")
               .style("visibility", "visible")
-              .html(groupTip(rdr(d)))
-              .style("top", function () { return (d3.event.pageY - 80)+"px"})
-              .style("left", function () { return (d3.event.pageX - 130)+"px";})
+              .html(function(){
+                f = rdr(d);
+                return f.gname.substring(f.gname.indexOf("-")+1)+': '+f.gdata[0];
+              })
+              .style("top", function () { return (d3.event.pageY - 50)+"px"})
+              .style("left", function () { return (d3.event.pageX - 90)+"px";})
 
             chordPaths.classed("fade", function(p) {
-              return p.source.index != i
-                  && p.target.index != i;
+              return p.source.index != i && p.target.index != i;
             });
+          }
+
+          function onclick(d,i) {
+            if(clicked == 0) {
+              chordPaths.classed("fade", function(p) {
+                return p.source.index != i && p.target.index != i;
+              });
+            }
           }
       }
 

@@ -42,14 +42,20 @@ function chordMpr (data) {
   mpr.addValuesToMap = function (varName, addtionalVar, info) {
     var values = [], m = {};
     data.forEach(function(r) {
-      if (!m[r[varName]]){
-        m[r[varName]] = r[addtionalVar];
+      if (!m[r[varName]]){        
+        if (addtionalVar != null) {
+          arr = [];
+          addtionalVar.forEach(function(d) {
+             arr.push(r[d]);
+          })
+          m[r[varName]] = arr;          
+        }
         values.push(r[varName]);
       }
     })    
     _.map(values, function (v) {
       if (!mmap[v]) {
-        mmap[v] = { name: v, id: n++, data: m[v] }
+        mmap[v] = { name: v, id: n++, data: m[v], info: info }
       }
     });
     return this;
