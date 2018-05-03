@@ -41,18 +41,55 @@
   <body>
     <section id="diagram"></section>
     <div id="tooltip"></div>
+    <div>
     <svg height="6" width="6" xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <pattern id="whitecarbon" patternUnits="userSpaceOnUse" width="6" height="6"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNicgaGVpZ2h0PSc2Jz4KICA8cmVjdCB3aWR0aD0nNicgaGVpZ2h0PSc2JyBmaWxsPScjZWVlZWVlJy8+CiAgPGcgaWQ9J2MnPgogICAgPHJlY3Qgd2lkdGg9JzMnIGhlaWdodD0nMycgZmlsbD0nI2U2ZTZlNicvPgogICAgPHJlY3QgeT0nMScgd2lkdGg9JzMnIGhlaWdodD0nMicgZmlsbD0nI2Q4ZDhkOCcvPgogIDwvZz4KICA8dXNlIHhsaW5rOmhyZWY9JyNjJyB4PSczJyB5PSczJy8+Cjwvc3ZnPg==" x="0" y="0" width="6" height="6"> </image> </pattern> </defs> </svg>
+    </div>
+
+    
+	<div id="slider-range">
+		<p>
+		  <label for="yearFilter">Year range:</label>
+		  <input type="text" id="yearFilter" readonly style="border:0; color:#f6931f; font-weight:bold;">
+		</p>
+	</div>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="mapper.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <script>
+      
+      //*******************************************************************
+      //  CREATE YEAR FILTER
+      //*******************************************************************
+
+      	$( function() {
+		    $( "#slider-range" ).slider({
+		    	range: true,
+		        min: 0,
+		        max: 500,
+		        values: [ 75, 300 ],
+		        slide: function( event, ui ) {
+		        	$( "#yearFilter" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+		      	}
+		    });
+		    $( "#yearFilter" ).val( $( "#slider-range" ).slider( "values", 0 ) +
+		      " - " + $( "#slider-range" ).slider( "values", 1 ) );
+	  	} );
+
+
+
+
+
       //*******************************************************************
       //  CREATE MATRIX AND MAP
       //*******************************************************************
       var fullData, PopularThemes;
       var clicked = 0;
 
-      filterData(4,2014,2018);
+      filterData(4,1950,2018);
 
       function filterData(topN, yearBegin, yearEnd) {
 
