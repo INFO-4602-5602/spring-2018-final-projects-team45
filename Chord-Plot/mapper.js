@@ -73,11 +73,11 @@ function chordRdr (matrix, mmap) {
       s = _.where(mmap, {id: i });
       t = _.where(mmap, {id: j });
       m.sname = s[0].name;
-      m.sdata = d.source.value;
+      m.sdata = s[0].data;
       m.svalue = +d.source.value;
       m.stotal = _.reduce(matrix[i], function (k, n) { return k + n }, 0);
       m.tname = t[0].name;
-      m.tdata = d.target.value;
+      m.tdata = t[0].data;
       m.tvalue = +d.target.value;
       m.ttotal = _.reduce(matrix[j], function (k, n) { return k + n }, 0);
     } else {
