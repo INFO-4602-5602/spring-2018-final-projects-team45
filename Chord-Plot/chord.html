@@ -1,57 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  	<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
-      body {font-family: "Source Code Pro", Consolas, monaco, monospace; line-height: 160%; font-size: 14px;  margin: 0; }
-      #tooltip {
-        color: #454545;
-        opacity: .9;
-        background: #eee;
-        padding: 5px;
-        border: none;
-        border-radius: 5px;
-        position: absolute;
-        z-index: 10;
-        visibility: hidden;
-        white-space: nowrap;
-        pointer-events: none;
-      }
-      #circle circle {
-        fill: none;
-        pointer-events: all;
-      }
-      path.group {
-        fill-opacity: .8;
-      }
-      path.chord {
-        fill-opacity: .8;
-        stroke: #000;
-        stroke-width: .25px;
-      }
-      #circle:hover path.fade {
-        display: none;
-      }
-      aside {padding: 20px;}
-      h1, h3 {font-size: 14px; font-weight: normal; padding-left: 40px;}
-    </style>
-  </head>
-  <body>
-    <section id="diagram"></section>
-    <div id="tooltip"></div>
-    <div>
-    <svg height="6" width="6" xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <pattern id="whitecarbon" patternUnits="userSpaceOnUse" width="6" height="6"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNicgaGVpZ2h0PSc2Jz4KICA8cmVjdCB3aWR0aD0nNicgaGVpZ2h0PSc2JyBmaWxsPScjZWVlZWVlJy8+CiAgPGcgaWQ9J2MnPgogICAgPHJlY3Qgd2lkdGg9JzMnIGhlaWdodD0nMycgZmlsbD0nI2U2ZTZlNicvPgogICAgPHJlY3QgeT0nMScgd2lkdGg9JzMnIGhlaWdodD0nMicgZmlsbD0nI2Q4ZDhkOCcvPgogIDwvZz4KICA8dXNlIHhsaW5rOmhyZWY9JyNjJyB4PSczJyB5PSczJy8+Cjwvc3ZnPg==" x="0" y="0" width="6" height="6"> </image> </pattern> </defs> </svg>
-    </div>
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-    
-	<div id="slider-range">
-		<p>
-		  <label for="yearFilter">Year range:</label>
-		  <input type="text" id="yearFilter" readonly style="border:0; color:#f6931f; font-weight:bold;">
-		</p>
+	    <style>
+	      @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
+	      body {font-family: "Source Code Pro", Consolas, monaco, monospace; line-height: 160%; font-size: 14px;  margin: 0; }
+	      #tooltip {
+	        color: #454545;
+	        opacity: .9;
+	        background: #eee;
+	        padding: 5px;
+	        border: none;
+	        border-radius: 5px;
+	        position: absolute;
+	        z-index: 10;
+	        visibility: hidden;
+	        white-space: nowrap;
+	        pointer-events: none;
+	      }
+	      #circle circle {
+	        fill: none;
+	        pointer-events: all;
+	      }
+	      path.group {
+	        fill-opacity: .8;
+	      }
+	      path.chord {
+	        fill-opacity: .8;
+	        stroke: #000;
+	        stroke-width: .25px;
+	      }
+	      #circle:hover path.fade {
+	        display: none;
+	      }
+	      aside {padding: 20px;}
+	      h1, h3 {font-size: 14px; font-weight: normal; padding-left: 40px;}
+	    </style>
+  	</head>
+  	<body>
+  	<div id="wrapper" >
+  		<div id="first" style="float: left;" width="300px">
+		    <section id="diagram">
+		    	
+		    </section>
+		    <div id="tooltip">
+		    	
+		    </div>
+		    <div id="something">
+		    	<svg height="6" width="6" xmlns="http://www.w3.org/2000/svg" version="1.1"> 
+			    	<defs> 
+			    		<pattern id="whitecarbon" patternUnits="userSpaceOnUse" width="6" height="6"> 
+			    			<image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNicgaGVpZ2h0PSc2Jz4KICA8cmVjdCB3aWR0aD0nNicgaGVpZ2h0PSc2JyBmaWxsPScjZWVlZWVlJy8+CiAgPGcgaWQ9J2MnPgogICAgPHJlY3Qgd2lkdGg9JzMnIGhlaWdodD0nMycgZmlsbD0nI2U2ZTZlNicvPgogICAgPHJlY3QgeT0nMScgd2lkdGg9JzMnIGhlaWdodD0nMicgZmlsbD0nI2Q4ZDhkOCcvPgogIDwvZz4KICA8dXNlIHhsaW5rOmhyZWY9JyNjJyB4PSczJyB5PSczJy8+Cjwvc3ZnPg==" x="0" y="0" width="6" height="6"> 
+			    			</image> 
+			    		</pattern> 
+			    	</defs> 
+		    	</svg>
+		    </div>
+	    </div>
+			<div data-role="rangeslider" id="vipraYearRange" >
+		        <label for="year-min-label">Year:</label>
+		        <input type="range" name="year-min" id="year-min" value="2000" min="1950" max="2018">
+		        
+		        <!-- <label for="price-max">Price:</label> -->
+		        <input type="range" name="year-max" id="year-max" value="2016" min="1950" max="2018">
+      		</div>
 	</div>
+    
+	
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
@@ -65,20 +85,6 @@
       //  CREATE YEAR FILTER
       //*******************************************************************
 
-      	$( function() {
-		    $( "#slider-range" ).slider({
-		    	range: true,
-		        min: 0,
-		        max: 500,
-		        values: [ 75, 300 ],
-		        slide: function( event, ui ) {
-		        	$( "#yearFilter" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-		      	}
-		    });
-		    $( "#yearFilter" ).val( $( "#slider-range" ).slider( "values", 0 ) +
-		      " - " + $( "#slider-range" ).slider( "values", 1 ) );
-	  	} );
-
 
 
 
@@ -89,7 +95,7 @@
       var fullData, PopularThemes;
       var clicked = 0;
 
-      filterData(4,1950,2018);
+      filterData(4,2000,2018);
 
       function filterData(topN, yearBegin, yearEnd) {
 
