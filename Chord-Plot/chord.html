@@ -39,6 +39,10 @@
     </style>
   </head>
   <body>
+    <select id="d3-dropdown">
+          <option value="10">Top 10</option>
+          <option value="15">Top 15</option>
+        </select>
     <section id="diagram"></section>
     <div id="tooltip"></div>
     <svg height="6" width="6" xmlns="http://www.w3.org/2000/svg" version="1.1"> <defs> <pattern id="whitecarbon" patternUnits="userSpaceOnUse" width="6" height="6"> <image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNicgaGVpZ2h0PSc2Jz4KICA8cmVjdCB3aWR0aD0nNicgaGVpZ2h0PSc2JyBmaWxsPScjZWVlZWVlJy8+CiAgPGcgaWQ9J2MnPgogICAgPHJlY3Qgd2lkdGg9JzMnIGhlaWdodD0nMycgZmlsbD0nI2U2ZTZlNicvPgogICAgPHJlY3QgeT0nMScgd2lkdGg9JzMnIGhlaWdodD0nMicgZmlsbD0nI2Q4ZDhkOCcvPgogIDwvZz4KICA8dXNlIHhsaW5rOmhyZWY9JyNjJyB4PSczJyB5PSczJy8+Cjwvc3ZnPg==" x="0" y="0" width="6" height="6"> </image> </pattern> </defs> </svg>
@@ -46,48 +50,124 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="mapper.js"></script>
     <script>
+
+      d3.select("select").on("change", function () { 
+          selected = this.value;
+          d3.select(".alt-view").remove();
+          if(selected == "10"){changeData(10)}
+          else if(selected == "15"){changeData(15)}
+       });
+
       //*******************************************************************
       //  CREATE MATRIX AND MAP
       //*******************************************************************
-      var fullData, PopularThemes;
-      var clicked = 0;
+      var FullData, PopularThemes;
+      var dataLoaded = false;
 
-      filterData(4,2014,2018);
-
-      function filterData(topN, yearBegin, yearEnd) {
-
+      function loadData(f) {
         d3.csv('data/Full_Cleaned_Data.csv', function (error, data) {
 
           d3.csv('data/PopularThemes.csv', function (error, pThemes) {
 
-            fullData = data;
+            FullData = data;
             PopularThemes = pThemes;
-            var n = 0;
+            dataLoaded = true;
+            f(4,2004,20016);
+          });
+        });
+      }
 
-            topNThemes = {};
-            filteredData = [];
+      // Load all Data on page load
+      loadData(function(topN, yB, yE) {filterData(topN,yB,yE);});
 
-            if(topN > 0) {
-              pThemes.some(function(r) {
-                topNThemes[r.ThemeName] = 1;
-                return ++n === topN;
-              });              
-            }            
+      function getDistinctThemes(yearBegin, yearEnd) {
+        
+        var filteredThemesByYear = [];
+        var topThemeIndex = {};
+        var i = -1;
 
-            data.forEach(function(r) {
-              if(r.Year1 >= yearBegin && r.Year1 <= yearEnd && r.Year2 >= yearBegin && r.Year2 <= yearEnd && topNThemes[r.Theme1] === 1 &&  topNThemes[r.Theme2] === 1) {
-                r.ThemeName1 = r.Year1+'-'+r.Theme1;
-                r.ThemeName2 = r.Year2+'-'+r.Theme2;
-                r.NormalizedDiff = parseInt(r.NormalizedDiff);
-                //r.NormalizedDiff = (r.NormalizedDiff < 0)? r.NormalizedDiff*-1:r.NormalizedDiff;
-                filteredData.push(r);
-              }
-            })
+        PopularThemes.forEach(function(r) {
 
-            //console.log(topNThemes,filteredData);
-            plotData(filteredData);
-          })
+          if (r.Year >= yearBegin && r.Year <= yearEnd) {
+            if (!topThemeIndex[r.ThemeName] && topThemeIndex[r.ThemeName] != 0) {
+              filteredThemesByYear.push({name: r.ThemeName, val: parseInt(r.NoOfReleasedSets)})                                    
+              topThemeIndex[r.ThemeName] = ++i;
+            }
+            else
+              filteredThemesByYear[topThemeIndex[r.ThemeName]].val += parseInt(r.NoOfReleasedSets);
+          }
+        });
+
+        filteredThemesByYear.sort(function(a,b){
+          if (a.val < b.val) return 1;
+          if (a.val > b.val) return -1;
+          if (a.name < b.name) return -1;
+          if (a.name > b.name) return 1;
+          return 0;
         })
+
+        return filteredThemesByYear;
+      }
+
+      function changeData() {
+
+      }
+
+      
+      function filterData(topN, yearBegin, yearEnd) {
+        
+        var n = 0;
+
+        var filteredThemesByYear = [];
+        var topThemeIndex = {};
+        var i = -1;
+        var topNThemes = {};
+        var filteredData = [];
+
+        if(topN > 0) {
+          PopularThemes.forEach(function(r) {
+
+            if (r.Year >= yearBegin && r.Year <= yearEnd) {
+              if (!topThemeIndex[r.ThemeName] && topThemeIndex[r.ThemeName] != 0) {
+                filteredThemesByYear.push({name: r.ThemeName, val: parseInt(r.NoOfReleasedSets)})                                    
+                topThemeIndex[r.ThemeName] = ++i;
+              }
+              else
+                filteredThemesByYear[topThemeIndex[r.ThemeName]].val += parseInt(r.NoOfReleasedSets);
+            }
+          });
+
+          filteredThemesByYear.sort(function(a,b){
+            if (a.val < b.val) return 1;
+            if (a.val > b.val) return -1;
+            if (a.name < b.name) return -1;
+            if (a.name > b.name) return 1;
+            return 0;
+          })
+
+          //console.log(filteredThemesByYear);              
+          filteredThemesByYear.some(function(r) {
+            if (!topNThemes[r.name]) {
+              topNThemes[r.name] = 1;
+              n++;
+            }
+            return n === topN;
+          });              
+        }            
+
+        FullData.forEach(function(r) {
+          if(r.Year1 >= yearBegin && r.Year1 <= yearEnd && r.Year2 >= yearBegin && r.Year2 <= yearEnd && topNThemes[r.Theme1] === 1 &&  topNThemes[r.Theme2] === 1) {
+            r.ThemeName1 = r.Year1+'-'+r.Theme1;
+            r.ThemeName2 = r.Year2+'-'+r.Theme2;
+            r.NormalizedDiff = parseInt(r.NormalizedDiff);
+            //r.NormalizedDiff = (r.NormalizedDiff < 0)? r.NormalizedDiff*-1:r.NormalizedDiff;
+            filteredData.push(r);
+          }
+        })
+
+        console.log(topNThemes);
+        plotData(filteredData);
+          
       }
 
       function plotData(data) {
@@ -299,7 +379,7 @@
                   + (d.angle > Math.PI ? "rotate(180)" : "");
             })
             .text(function(d) { 
-              name = rdr(d).gname; 
+              name = rdr(d).cname; 
               return name.substring(name.indexOf("-")+1); 
             });
 
@@ -322,7 +402,7 @@
 
           function chordTip (d) {                        
             diff = d.sdata[0] - d.tdata[0];
-            console.log(d);
+            //console.log(d);
             return d.sname+": "+d.sdata[0]+"<br/>" +
                    d.tname+": "+d.tdata[0]+"<br/>" + 
                    "Difference: " + Math.abs(diff);
@@ -333,7 +413,7 @@
               .style("visibility", "visible")
               .html(function(){
                 f = rdr(d);
-                return f.gname.substring(f.gname.indexOf("-")+1)+': '+f.gdata[0];
+                return f.cname.substring(f.cname.indexOf("-")+1)+': '+f.cdata[0];
               })
               .style("top", function () { return (d3.event.pageY - 50)+"px"})
               .style("left", function () { return (d3.event.pageX - 90)+"px";})
@@ -343,16 +423,14 @@
             });
           }
 
-          function onclick(d,i) {
-            if(clicked == 0) {
-              name = rdr(d).gname; 
-              name = name.substring(name.indexOf("-")+1);   
-              console.log(themeIndexes[name]);           
-              chordPaths.classed("fade", function(p) {
-                console.log(d3.select(this).attr("id"), !(p.source.index in themeIndexes[name] || p.target.index in themeIndexes[name]));
-                return !(themeIndexes[name].includes(p.source.index) || themeIndexes[name].includes(p.target.index));
-              });
-            }
+          function onclick(d,i) {            
+            name = rdr(d).cname; 
+            name = name.substring(name.indexOf("-")+1);   
+            console.log(themeIndexes[name]);           
+            chordPaths.classed("fade", function(p) {
+              //console.log(d3.select(this).attr("id"), !(p.source.index in themeIndexes[name] || p.target.index in themeIndexes[name]));
+              return !(themeIndexes[name].includes(p.source.index) || themeIndexes[name].includes(p.target.index));
+            });            
           }
       }
 

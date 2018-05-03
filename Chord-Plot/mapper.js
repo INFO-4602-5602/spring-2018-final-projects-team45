@@ -67,7 +67,7 @@ function chordMpr (data) {
 //*******************************************************************
 function chordRdr (matrix, mmap) {
   return function (d) {
-    var i,j,s,t,g,m = {};
+    var i,j,s,t,chrd,m = {};
     if (d.source) {
       i = d.source.index; j = d.target.index;
       s = _.where(mmap, {id: i });
@@ -75,20 +75,20 @@ function chordRdr (matrix, mmap) {
       m.sname = s[0].name;
       m.sdata = s[0].data;
       m.svalue = +d.source.value;
-      m.stotal = _.reduce(matrix[i], function (k, n) { return k + n }, 0);
+      //m.stotal = _.reduce(matrix[i], function (k, n) { return k + n }, 0);
       m.tname = t[0].name;
       m.tdata = t[0].data;
       m.tvalue = +d.target.value;
-      m.ttotal = _.reduce(matrix[j], function (k, n) { return k + n }, 0);
+     // m.ttotal = _.reduce(matrix[j], function (k, n) { return k + n }, 0);
     } else {
-      g = _.where(mmap, {id: d.index });
-      m.gname = g[0].name;
-      m.gdata = g[0].data;
-      m.gvalue = d.value;
+      chrd = _.where(mmap, {id: d.index });
+      m.cname = chrd[0].name;
+      m.cdata = chrd[0].data;
+      m.cvalue = d.value;
     }
-    m.mtotal = _.reduce(matrix, function (m1, n1) { 
-      return m1 + _.reduce(n1, function (m2, n2) { return m2 + n2}, 0);
-    }, 0);
+    //m.mtotal = _.reduce(matrix, function (m1, n1) { 
+    //  return m1 + _.reduce(n1, function (m2, n2) { return m2 + n2}, 0);
+    //}, 0);
     return m;
   }
 }

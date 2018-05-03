@@ -1,366 +1,1919 @@
-ThemeName,NoOfReleasedSets
-Star Wars,514
-Supplemental,420
-Technic,395
-Friends,262
-City,257
-Creator,235
-Service Packs,213
-Duplo,210
-Ninjago,182
-Basic Set,175
-Airport,141
-Construction,132
-Traffic,130
-Bulk Bricks,125
-Police,114
-Clikits,101
-Advent Sub-Set,96
-Soccer,94
-Batman,89
-Race,88
-LEGO Brand Store,88
-Knights Kingdom,82
-Legends of Chima,80
-Basic Model,79
-Classic Space,78
-4.5V,77
-Fabuland,77
-Train,77
-Castle,75
-Monthly Mini Model Build,73
-Nexo Knights,70
-Other,67
-Fire,66
-Tiny Turbos,66
-Classic Basic,64
-Gear,60
-Dimensions,58
-Architecture,58
-Bionicle,57
-Christmas,56
-Town,56
-12V,50
-Game,50
-Studios,49
-Building,48
-Pirates,47
-Mini,47
-Power Racers,45
-The LEGO Movie,45
-Freestyle,44
-Harbor,43
-9V,42
-Designer Sets,41
-Fairy-Tale,41
-Exo-Force,41
-Off-Road,40
-Drome Racers,39
-Recreation,38
-Factory,37
-Basic,37
-Heroes,36
-Pirates I,36
-Juniors,33
-Basketball,33
-Educational and Dacta,32
-The Simpsons,32
-Villains,32
-Homemaker,31
-Elves,30
-Cars,30
-Coast Guard,29
-Ferrari,29
-Food & Drink,28
-Building Set with People,28
-Belville,28
-Ninja,28
-Minecraft,27
-RCX,27
-Disney Princess,27
-Spider-Man,27
-Speedorz,26
-Space Port,26
-Fantasy Era,26
-Hospital,26
-Books,26
-NXT,26
-Town Plan,25
-RoboRiders,24
-Avengers,24
-Desert,24
-Expert Builder,23
-Easter,23
-Animals,23
-Riding Cycle,23
-Orient Expedition,23
-Legoland Parks,23
-Universal Building Set,23
-Super Heroes,23
-Titans,22
-My Own Train,22
-Atlantis,22
-Model,21
-Speed Champions,21
-Power Miners,20
-Sculptures,20
-Cargo,20
-Boat,20
-Arctic,19
-Disney,19
-Harry Potter,19
-Extreme Team,19
-Promotional,19
-Teenage Mutant Ninja Turtles,19
-Znap,19
-X-Pod,18
-Space,18
-Rahkshi,18
-Paradisa,18
-Life On Mars,18
-Futuron,18
-Divers,18
-FIRST LEGO League,18
-Constraction,17
-Hockey,17
-Lion Knights,17
-Mars Mission,17
-LEGO Ideas and CUUSOO,17
-Insectoids,17
-Mission Deep Sea,17
-RC Train,17
-Power Functions,17
-Series 10 Minifigures,17
-Series 17 Minifigures,17
-Throwbot Slizer,17
-Xalax,16
-Series 1 Minifigures,16
-Series 2 Minifigures,16
-Series 3 Minifigures,16
-Series 11 Minifigures,16
-Series 12 Minifigures,16
-Series 13 Minifigures,16
-Series 14 Minifigures,16
-Series 15 Minifigures,16
-Series 16 Minifigures,16
-Series 9 Minifigures,16
-Series 8 Minifigures,16
-Series 4 Minifigures,16
-Series 5 Minifigures,16
-Series 6 Minifigures,16
-Series 7 Minifigures,16
-Rock Raiders,16
-Model Team,16
-Kingdoms,16
-DFB Minifigures,16
-Classic,16
-Competition,15
-Dino Island,15
-Hero Factory,15
-Fright Knights,15
-Gas Station,15
-Marvel,15
-Pick A Model,15
-Pirates of the Caribbean,15
-Seasonal,15
-Warriors,15
-Toy Story,15
-Space Police III,15
-Station,15
-SpongeBob SquarePants,14
-UFO,14
-Ultra Agents,14
-Playhouse,14
-Monster Fighters,14
-Farm,14
-EV3,14
-Creature,14
-Black Knights,14
-Brickheadz,14
-Collectible Minifigures,13
-Agents,13
-Island Xtreme Stunts,13
-Scala,13
-Toa,13
-Sorcerer's Stone,13
-Vahki,12
-WeDo,12
-Radio Control,12
-Master Building Academy,12
-Modular Buildings,12
-Matoran of Mata Nui,12
-Blacktron II,12
-Dinosaurs,12
-Galaxy Squad,12
-Halloween,11
-Hobby Sets,11
-Jungle,11
-Justice League,11
-Playsets,11
-Post Office,10
-Res-Q,10
-Key Chain,10
-Pirates II,10
-Gravity Games,10
-Cowboys,10
-Bohrok Va,10
-Chamber of Secrets,10
-Alien Conquest,10
-World City,10
-Valentine,9
-Turaga,9
-Superman,9
-Team GB,9
-An Unexpected Journey,9
-Battle Vehicles,9
-Guardians of the Galaxy,9
-M:Tron,9
-Royal Knights,9
-Pharaoh's Quest,9
-Series 1,9
-Series 4,9
-Series 3,9
-Series 2,9
-Series 8,9
-Series 7,9
-Series 6,9
-Series 5,9
-Series 9,9
-Prisoner of Azkaban,8
-Legoland,8
-Kingdom of the Crystal Skull,8
-Minitalia,8
-Mission Deep Freeze,8
-Mosaic,8
-Ice Planet 2002,8
-Indians,8
-Gears,8
-Exploriens,8
-Bricktober,8
-The Lone Ranger,8
-Space Police II,8
-Spyrius,8
-Time Cruisers,8
-World Racers,8
-Vikings,7
-Toa Metru,7
-Airjitzu,7
-Aquanauts,7
-Aquaraiders II,7
-Dino,7
-Forestmen,7
-Holiday,7
-Pirates III,7
-Jurassic World,7
-Jungle Rescue,6
-Islanders,6
-Learning,6
-Matoran of Light,6
-Phantoka,6
-Mistika,6
-Matoran of Metru Nui,6
-Matoran of Voya Nui,6
-Rahaga,6
-Racers,6
-Piraka,6
-Protectors,6
-Prince of Persia,6
-Skylines,6
-Scooby-Doo,6
-Imperial Soldiers,6
-Glatorian,6
-Glatorian Legends,6
-Discovery,6
-Disney's Mickey Mouse,6
-Ferries,6
-Aquasharks,6
-Angry Birds,6
-Alpha Team,6
-Agori,6
-Barraki,6
-Ben 10,6
-Black Falcons,6
-Bohrok-Kal,6
-Bohrok,6
-Blacktron I,6
-Toa Nuva,6
-Toa Okoto,6
-Tohunga,6
-Visorak,6
-Toa Hordika,6
-Toa Inika,6
-Toa Mahri,6
-Stars,6
-Space Police I,6
-Speed Slammers,6
-The Desolation of Smaug,6
-The Fellowship of the Ring,5
-The Battle of the Five Armies,5
-Stingrays,5
-Crusaders,5
-Dino 2010,5
-Dino Attack,5
-Goblet of Fire,5
-Golden Land,5
-Soft Bricks,5
-Rahi,5
-Raiders of the Lost Ark,5
-Robot,5
-Mindstorms,5
-Outback,5
-Legend Beasts,5
-Launch Command,5
-Iron Man,5
-Inventor,4
-Matoran of Mahri Nui,4
-Minifig Pack,4
-RoboForce,4
-Fusion,4
-Hydronauts,4
-Classic Castle,4
-Arctic Technic,4
-Thanksgiving,4
-Speed Racer,4
-Sports,4
-Spybiotics,4
-Trains,4
-Unitron,4
-The Two Towers,4
-Track System,3
-Ultimate Collector Series,3
-The Lord of the Rings,3
-The Return of the King,3
-X-Men,3
-Wolfpack,3
-Advent,3
-Aquaraiders I,3
-Dark Forest,3
-Planet Series 2,3
-My Own Creation,3
-Jumbo Bricks,3
-Last Crusade,3
-Lamborghini,2
-Jurassic Park III,2
-Planet Series 4,2
-Avatar,2
-Imperial Armada,2
-Williams F1,2
-The Hobbit,2
-Temple of Doom,2
-Spider-Man 2,2
-Vehicles,2
-Toa Hagah,2
-Vehicle,1
-Universe,1
-Western?ß,1
-HO 1:87 Vehicles,1
-Ghostbusters,1
-eLAB,1
-Aquazone,1
-4 Juniors,1
-Adventurers,1
-Control Lab,1
-Planet Series 3,1
-Skull Spiders,1
-LEGO Exclusive,1
-Order of the Phoenix,1
+Year,ThemeName,NoOfReleasedSets
+1950,Supplemental,6
+1950,Basic Set,1
+1953,Supplemental,4
+1954,Supplemental,12
+1954,Town Plan,1
+1955,Supplemental,19
+1955,Town Plan,6
+1955,Mosaic,1
+1956,Supplemental,7
+1956,Town Plan,4
+1957,Town Plan,8
+1957,Supplemental,6
+1957,HO 1:87 Vehicles,1
+1958,Supplemental,29
+1958,Town Plan,10
+1958,Basic Set,1
+1959,Supplemental,2
+1959,Basic Set,1
+1959,Town Plan,1
+1960,Classic,1
+1960,Supplemental,1
+1961,Supplemental,12
+1961,Airport,1
+1961,Classic,1
+1961,Harbor,1
+1961,Town Plan,1
+1962,Architecture,28
+1962,Supplemental,8
+1962,Town Plan,2
+1963,Supplemental,9
+1963,Traffic,2
+1963,Building,1
+1963,Farm,1
+1964,Supplemental,3
+1964,Building,2
+1964,Airport,1
+1964,Farm,1
+1964,Fire,1
+1964,Train,1
+1965,Supplemental,3
+1965,Basic Set,2
+1965,Airport,1
+1965,Building,1
+1965,Classic,1
+1965,Traffic,1
+1966,Supplemental,71
+1966,4.5V,12
+1966,Building,1
+1966,Jumbo Bricks,1
+1966,Traffic,1
+1967,Supplemental,6
+1967,4.5V,4
+1967,Cargo,3
+1967,Traffic,2
+1967,Airport,1
+1967,Basic Set,1
+1967,Construction,1
+1967,Other,1
+1968,4.5V,7
+1968,Building,3
+1968,Jumbo Bricks,2
+1968,Basic Set,1
+1968,Fire,1
+1968,Harbor,1
+1968,Supplemental,1
+1968,Town Plan,1
+1968,Traffic,1
+1969,Supplemental,37
+1969,4.5V,13
+1969,12V,12
+1969,Building,3
+1969,Basic Set,2
+1969,Construction,1
+1970,12V,4
+1970,Factory,3
+1970,Gears,3
+1970,4.5V,2
+1970,Airport,2
+1970,Fire,2
+1970,Castle,1
+1970,Construction,1
+1970,Gas Station,1
+1970,Hospital,1
+1970,Supplemental,1
+1970,Vehicle,1
+1971,Construction,12
+1971,Factory,6
+1971,Building,5
+1971,Supplemental,5
+1971,Minitalia,4
+1971,Fire,2
+1971,Gas Station,2
+1971,Homemaker,2
+1971,4.5V,1
+1971,Hospital,1
+1972,4.5V,9
+1972,Supplemental,7
+1972,Factory,6
+1972,Construction,4
+1972,Airport,3
+1972,Building,3
+1972,Learning,2
+1972,12V,1
+1972,Gears,1
+1972,Homemaker,1
+1972,Police,1
+1973,Supplemental,12
+1973,Construction,9
+1973,Homemaker,8
+1973,Factory,4
+1973,Minitalia,4
+1973,Boat,3
+1973,Fire,2
+1973,Hospital,2
+1973,Police,2
+1973,Airport,1
+1973,Basic Set,1
+1973,Building,1
+1973,Gas Station,1
+1973,Space,1
+1973,Technic,1
+1974,Homemaker,8
+1974,12V,6
+1974,Building Set with People,5
+1974,Construction,4
+1974,Gears,4
+1974,Airport,3
+1974,Fire,2
+1974,Basic Set,1
+1974,Boat,1
+1974,Building,1
+1974,Gas Station,1
+1974,Legoland,1
+1974,Supplemental,1
+1975,4.5V,6
+1975,Building Set with People,5
+1975,Construction,4
+1975,Factory,4
+1975,Hobby Sets,3
+1975,Fire,2
+1975,Airport,1
+1975,Building,1
+1975,Gears,1
+1975,Harbor,1
+1975,Hospital,1
+1975,Police,1
+1975,Space,1
+1976,Building Set with People,9
+1976,4.5V,8
+1976,Construction,6
+1976,Building,5
+1976,Factory,5
+1976,Airport,4
+1976,Hobby Sets,4
+1976,Hospital,3
+1976,Boat,2
+1976,Police,2
+1976,Supplemental,2
+1976,Basic Set,1
+1976,Coast Guard,1
+1976,Fire,1
+1976,Harbor,1
+1976,Space,1
+1976,Train,1
+1977,Service Packs,19
+1977,Train,16
+1977,Building Set with People,8
+1977,Expert Builder,6
+1977,Factory,6
+1977,Airport,4
+1977,Homemaker,3
+1977,4.5V,2
+1977,Ferries,2
+1977,12V,1
+1977,Basic Set,1
+1977,Christmas,1
+1977,Construction,1
+1977,Duplo,1
+1977,Gas Station,1
+1977,Harbor,1
+1977,Police,1
+1977,Supplemental,1
+1977,Technic,1
+1978,Expert Builder,8
+1978,Supplemental,8
+1978,Fire,6
+1978,Traffic,6
+1978,Construction,5
+1978,Homemaker,5
+1978,4.5V,4
+1978,Building Set with People,4
+1978,Station,4
+1978,Airport,3
+1978,Hospital,3
+1978,Police,3
+1978,Boat,2
+1978,Coast Guard,2
+1978,Building,1
+1978,Castle,1
+1978,Christmas,1
+1978,Classic Castle,1
+1978,Food & Drink,1
+1978,Hobby Sets,1
+1978,Technic,1
+1979,Classic Space,14
+1979,Fabuland,12
+1979,Supplemental,6
+1979,Expert Builder,5
+1979,Traffic,4
+1979,Construction,3
+1979,Homemaker,3
+1979,Police,3
+1979,Classic Castle,2
+1979,Hobby Sets,2
+1979,Hospital,2
+1979,Building,1
+1979,Fire,1
+1979,Food & Drink,1
+1979,Station,1
+1979,Technic,1
+1980,Supplemental,20
+1980,12V,16
+1980,4.5V,11
+1980,Traffic,6
+1980,Classic Space,5
+1980,Fabuland,5
+1980,Expert Builder,4
+1980,Construction,2
+1980,4 Juniors,1
+1980,Basic Set,1
+1980,Books,1
+1980,Building Set with People,1
+1980,Cargo,1
+1980,Fire,1
+1980,Food & Drink,1
+1980,Hobby Sets,1
+1980,Homemaker,1
+1980,Hospital,1
+1980,Race,1
+1980,Service Packs,1
+1980,Station,1
+1980,Technic,1
+1980,Town,1
+1980,Train,1
+1981,Train,13
+1981,Classic Space,6
+1981,Service Packs,6
+1981,Fabuland,5
+1981,Expert Builder,4
+1981,Classic Castle,3
+1981,Fire,3
+1981,Hospital,3
+1981,Technic,3
+1981,Town,3
+1981,12V,2
+1981,Construction,2
+1981,Police,2
+1981,Station,2
+1981,Basic Set,1
+1981,Building,1
+1981,Ferries,1
+1981,Post Office,1
+1981,Space,1
+1981,Supplemental,1
+1982,Technic,18
+1982,Fabuland,15
+1982,Service Packs,8
+1982,Basic Set,3
+1982,Boat,3
+1982,Classic Space,3
+1982,Post Office,3
+1982,Supplemental,3
+1982,Traffic,3
+1982,Expert Builder,2
+1982,Space,2
+1982,Universal Building Set,2
+1982,Building,1
+1982,Farm,1
+1982,Ferries,1
+1982,Fire,1
+1982,Homemaker,1
+1982,Town,1
+1982,Train,1
+1983,Fabuland,7
+1983,Classic Space,6
+1983,Supplemental,6
+1983,Basic Set,5
+1983,12V,4
+1983,4.5V,4
+1983,Basic Model,4
+1983,Traffic,3
+1983,Cargo,2
+1983,Police,2
+1983,Service Packs,2
+1983,Building,1
+1983,Classic Castle,1
+1983,Construction,1
+1983,Expert Builder,1
+1983,Fire,1
+1983,Food & Drink,1
+1983,Off-Road,1
+1983,Riding Cycle,1
+1983,Station,1
+1983,Train,1
+1984,Service Packs,10
+1984,Classic Space,8
+1984,Lion Knights,6
+1984,Fabuland,5
+1984,Technic,5
+1984,Basic Set,4
+1984,Police,4
+1984,Construction,3
+1984,Supplemental,3
+1984,Traffic,3
+1984,Airport,2
+1984,Black Falcons,2
+1984,Cargo,2
+1984,Duplo,2
+1984,Fire,2
+1984,Post Office,2
+1984,Station,2
+1984,Castle,1
+1984,Race,1
+1984,Town,1
+1984,Train,1
+1984,Universal Building Set,1
+1985,Technic,19
+1985,Classic Space,12
+1985,Fabuland,11
+1985,Service Packs,7
+1985,Supplemental,5
+1985,4.5V,4
+1985,Airport,4
+1985,Basic,4
+1985,Traffic,4
+1985,Construction,3
+1985,Fire,3
+1985,Police,3
+1985,Post Office,3
+1985,Universal Building Set,3
+1985,12V,2
+1985,Cargo,2
+1985,Race,2
+1985,Train,2
+1985,Basic Set,1
+1985,Black Falcons,1
+1985,Boat,1
+1985,Building,1
+1985,Coast Guard,1
+1985,Easter,1
+1985,Ferries,1
+1985,Food & Drink,1
+1985,Harbor,1
+1985,Hospital,1
+1985,Lion Knights,1
+1985,Off-Road,1
+1985,Town,1
+1986,Supplemental,23
+1986,Classic Space,16
+1986,Service Packs,12
+1986,Technic,8
+1986,Basic,6
+1986,Fabuland,5
+1986,Arctic Technic,4
+1986,Lion Knights,4
+1986,Race,4
+1986,Model Team,3
+1986,Police,3
+1986,Traffic,3
+1986,Universal Building Set,3
+1986,12V,2
+1986,Building,2
+1986,Christmas,2
+1986,Construction,2
+1986,Farm,2
+1986,Fire,2
+1986,Harbor,2
+1986,Town,2
+1986,Train,2
+1986,4.5V,1
+1986,Airport,1
+1986,Basic Set,1
+1986,Black Falcons,1
+1986,Cargo,1
+1986,Ferries,1
+1986,Off-Road,1
+1986,Station,1
+1987,Technic,54
+1987,Service Packs,46
+1987,Train,14
+1987,Basic,10
+1987,Fabuland,8
+1987,Classic Space,7
+1987,Airport,5
+1987,Race,5
+1987,Traffic,5
+1987,Futuron,4
+1987,Blacktron I,3
+1987,Boat,3
+1987,Fire,3
+1987,Lion Knights,3
+1987,Black Falcons,2
+1987,Building,2
+1987,Hospital,2
+1987,Space,2
+1987,Station,2
+1987,Supplemental,2
+1987,Town,2
+1987,Basic Set,1
+1987,Books,1
+1987,Duplo,1
+1987,Forestmen,1
+1987,Off-Road,1
+1987,Police,1
+1987,Robot,1
+1987,Universal Building Set,1
+1988,Futuron,9
+1988,Supplemental,7
+1988,Fabuland,6
+1988,Traffic,6
+1988,Race,4
+1988,Service Packs,4
+1988,Basic,3
+1988,Technic,3
+1988,Airport,2
+1988,Blacktron I,2
+1988,Construction,2
+1988,Fire,2
+1988,Lion Knights,2
+1988,Basic Model,1
+1988,Basic Set,1
+1988,Black Knights,1
+1988,Building,1
+1988,Classic Space,1
+1988,Educational and Dacta,1
+1988,Forestmen,1
+1988,Harbor,1
+1988,Hospital,1
+1988,Off-Road,1
+1988,Police,1
+1988,Space,1
+1988,Station,1
+1989,Service Packs,18
+1989,Basic Model,9
+1989,Technic,8
+1989,Pirates I,7
+1989,Race,7
+1989,Construction,6
+1989,Space Police I,6
+1989,Train,6
+1989,Christmas,4
+1989,Imperial Soldiers,4
+1989,Basic,3
+1989,Fabuland,3
+1989,Futuron,3
+1989,Traffic,3
+1989,Airport,2
+1989,Forestmen,2
+1989,Universal Building Set,2
+1989,Building,1
+1989,Castle,1
+1989,Coast Guard,1
+1989,Duplo,1
+1989,Ferries,1
+1989,Food & Drink,1
+1989,Hospital,1
+1989,Lion Knights,1
+1989,Off-Road,1
+1989,Police,1
+1989,Recreation,1
+1989,Supplemental,1
+1990,Airport,8
+1990,M:Tron,7
+1990,Basic,5
+1990,Race,5
+1990,Black Knights,3
+1990,Forestmen,3
+1990,Harbor,3
+1990,Service Packs,3
+1990,Supplemental,3
+1990,Traffic,3
+1990,Crusaders,2
+1990,Food & Drink,2
+1990,Futuron,2
+1990,Technic,2
+1990,Town,2
+1990,Universal Building Set,2
+1990,Blacktron I,1
+1990,Building,1
+1990,Cargo,1
+1990,Construction,1
+1990,Duplo,1
+1990,Easter,1
+1990,Fire,1
+1990,Model Team,1
+1990,Off-Road,1
+1990,Pirates,1
+1990,Police,1
+1990,Space,1
+1991,9V,12
+1991,Service Packs,12
+1991,Blacktron II,9
+1991,Race,7
+1991,Airport,6
+1991,Technic,6
+1991,Supplemental,5
+1991,Basic,4
+1991,Harbor,4
+1991,Town,4
+1991,Boat,3
+1991,Christmas,3
+1991,Fire,3
+1991,Pirates I,3
+1991,Construction,2
+1991,Imperial Soldiers,2
+1991,M:Tron,2
+1991,Off-Road,2
+1991,Police,2
+1991,Riding Cycle,2
+1991,Basic Set,1
+1991,Coast Guard,1
+1991,Crusaders,1
+1991,Duplo,1
+1991,Ferries,1
+1991,Model Team,1
+1991,Space,1
+1991,Traffic,1
+1991,Train,1
+1991,Universal Building Set,1
+1992,Technic,27
+1992,Pirates I,6
+1992,Train,6
+1992,Black Knights,5
+1992,Paradisa,5
+1992,Race,5
+1992,Supplemental,5
+1992,Construction,4
+1992,Basic,3
+1992,Service Packs,3
+1992,Space Police II,3
+1992,Universal Building Set,3
+1992,Airport,2
+1992,Basic Set,2
+1992,Blacktron II,2
+1992,Crusaders,2
+1992,Ferries,2
+1992,Pirates,2
+1992,Police,2
+1992,Recreation,2
+1992,Station,2
+1992,Wolfpack,2
+1992,Christmas,1
+1992,Duplo,1
+1992,Easter,1
+1992,Fire,1
+1992,Harbor,1
+1992,Hospital,1
+1992,LEGO Brand Store,1
+1992,Traffic,1
+1993,Technic,13
+1993,Service Packs,11
+1993,Castle,7
+1993,Ice Planet 2002,6
+1993,Airport,5
+1993,Basic,5
+1993,Pirates I,5
+1993,Black Knights,4
+1993,Race,4
+1993,Space Police II,4
+1993,9V,3
+1993,Police,3
+1993,Recreation,3
+1993,Supplemental,3
+1993,Town,3
+1993,Universal Building Set,3
+1993,Basic Set,2
+1993,Construction,2
+1993,Duplo,2
+1993,Harbor,2
+1993,Model Team,2
+1993,Paradisa,2
+1993,Pirates,2
+1993,Riding Cycle,2
+1993,Space,2
+1993,Traffic,2
+1993,Blacktron II,1
+1993,Coast Guard,1
+1993,Educational and Dacta,1
+1993,Ferries,1
+1993,Off-Road,1
+1993,Wolfpack,1
+1994,Technic,26
+1994,Recreation,9
+1994,Basic Model,8
+1994,Airport,6
+1994,Islanders,6
+1994,Basic,5
+1994,Off-Road,5
+1994,Spyrius,5
+1994,Castle,4
+1994,Harbor,4
+1994,Service Packs,4
+1994,9V,3
+1994,Fire,3
+1994,Pirates,3
+1994,Pirates I,3
+1994,Playhouse,3
+1994,Ice Planet 2002,2
+1994,Paradisa,2
+1994,Race,2
+1994,Traffic,2
+1994,Universal Building Set,2
+1994,Basic Set,1
+1994,Food & Drink,1
+1994,Hospital,1
+1994,Model Team,1
+1994,Police,1
+1994,Supplemental,1
+1994,Town,1
+1994,Train,1
+1994,Unitron,1
+1995,Technic,19
+1995,Freestyle,18
+1995,Launch Command,5
+1995,Race,5
+1995,Royal Knights,5
+1995,Aquanauts,4
+1995,Service Packs,4
+1995,Supplemental,4
+1995,Castle,3
+1995,Construction,3
+1995,Pirates I,3
+1995,Unitron,3
+1995,9V,2
+1995,Aquasharks,2
+1995,Cargo,2
+1995,Fire,2
+1995,Paradisa,2
+1995,Playhouse,2
+1995,Riding Cycle,2
+1995,Airport,1
+1995,Aquazone,1
+1995,Basic Model,1
+1995,Basic Set,1
+1995,Belville,1
+1995,Bulk Bricks,1
+1995,Christmas,1
+1995,Coast Guard,1
+1995,Control Lab,1
+1995,Harbor,1
+1995,Model Team,1
+1995,Pirates,1
+1995,Police,1
+1995,Recreation,1
+1995,Space,1
+1995,Spyrius,1
+1995,Station,1
+1995,Town,1
+1995,Traffic,1
+1995,Universal Building Set,1
+1996,Supplemental,17
+1996,Technic,11
+1996,Airport,9
+1996,Exploriens,8
+1996,Service Packs,7
+1996,Cowboys,6
+1996,Freestyle,6
+1996,Pirates I,6
+1996,Race,5
+1996,Time Cruisers,5
+1996,9V,4
+1996,Aquanauts,3
+1996,Boat,3
+1996,Dark Forest,3
+1996,Paradisa,3
+1996,Playhouse,3
+1996,Police,3
+1996,Royal Knights,3
+1996,Aquasharks,2
+1996,Basic Model,2
+1996,Construction,2
+1996,Harbor,2
+1996,Imperial Armada,2
+1996,NXT,2
+1996,Off-Road,2
+1996,Recreation,2
+1996,Town,2
+1996,Traffic,2
+1996,Train,2
+1996,Universal Building Set,2
+1996,Basic Set,1
+1996,Belville,1
+1996,Building,1
+1996,Coast Guard,1
+1996,Ferries,1
+1996,Hospital,1
+1996,Model Team,1
+1996,Space,1
+1996,Spyrius,1
+1997,Basic Model,20
+1997,Technic,14
+1997,Divers,11
+1997,UFO,11
+1997,Fright Knights,10
+1997,Freestyle,9
+1997,Indians,7
+1997,Supplemental,7
+1997,Traffic,7
+1997,Airport,6
+1997,Race,6
+1997,Scala,6
+1997,Outback,5
+1997,Recreation,5
+1997,Christmas,4
+1997,Cowboys,4
+1997,Harbor,4
+1997,Paradisa,4
+1997,Pirates I,4
+1997,RoboForce,4
+1997,Aquaraiders I,3
+1997,Fire,3
+1997,Off-Road,3
+1997,Time Cruisers,3
+1997,Basic Set,2
+1997,Construction,2
+1997,Model Team,2
+1997,Service Packs,2
+1997,Universal Building Set,2
+1997,9V,1
+1997,Books,1
+1997,Cargo,1
+1997,Castle,1
+1997,Duplo,1
+1997,Food & Drink,1
+1997,Gas Station,1
+1997,Hospital,1
+1997,LEGO Brand Store,1
+1997,Other,1
+1997,Robot,1
+1997,Station,1
+1997,Town,1
+1997,Western?ß,1
+1998,Classic Basic,41
+1998,Soccer,22
+1998,Desert,19
+1998,Basic Model,18
+1998,Freestyle,15
+1998,Insectoids,12
+1998,Technic,12
+1998,Znap,12
+1998,Extreme Team,11
+1998,Ninja,11
+1998,Competition,10
+1998,Race,9
+1998,Res-Q,9
+1998,Recreation,8
+1998,Traffic,8
+1998,Service Packs,7
+1998,Fright Knights,6
+1998,RCX,6
+1998,Basic Set,5
+1998,Riding Cycle,5
+1998,Stingrays,5
+1998,Hydronauts,4
+1998,Off-Road,4
+1998,Supplemental,4
+1998,Airport,3
+1998,Castle,3
+1998,Police,3
+1998,Town,3
+1998,9V,2
+1998,Arctic,2
+1998,Cargo,2
+1998,UFO,2
+1998,Adventurers,1
+1998,Aquasharks,1
+1998,Aquazone,1
+1998,Belville,1
+1998,Black Knights,1
+1998,Construction,1
+1998,Crusaders,1
+1998,Divers,1
+1998,Duplo,1
+1998,Ferries,1
+1998,Halloween,1
+1998,Model Team,1
+1998,Post Office,1
+1998,Radio Control,1
+1998,Royal Knights,1
+1998,Scala,1
+1998,Soft Bricks,1
+1998,Space,1
+1999,Advent Sub-Set,24
+1999,Classic Basic,22
+1999,Space Port,20
+1999,Technic,18
+1999,Ninja,14
+1999,Star Wars,14
+1999,Service Packs,11
+1999,Throwbot Slizer,11
+1999,RCX,10
+1999,Fairy-Tale,9
+1999,Jungle,9
+1999,Race,9
+1999,Rock Raiders,9
+1999,9V,8
+1999,Town,8
+1999,Extreme Team,7
+1999,Znap,7
+1999,Traffic,6
+1999,Gas Station,5
+1999,Insectoids,5
+1999,Riding Cycle,5
+1999,Desert,4
+1999,Scala,4
+1999,Construction,3
+1999,Airport,2
+1999,Christmas,2
+1999,Coast Guard,2
+1999,Competition,2
+1999,Food & Drink,2
+1999,Harbor,2
+1999,Model Team,2
+1999,Off-Road,2
+1999,Recreation,2
+1999,Soft Bricks,2
+1999,Advent,1
+1999,Aquasharks,1
+1999,Basic Set,1
+1999,Belville,1
+1999,Duplo,1
+1999,eLAB,1
+1999,Ferries,1
+1999,Fire,1
+1999,Game,1
+1999,Hospital,1
+1999,Ice Planet 2002,1
+1999,Police,1
+1999,Res-Q,1
+1999,Space Police II,1
+1999,Spyrius,1
+1999,Supplemental,1
+1999,UFO,1
+1999,Western?ß,1
+2000,Bulk Bricks,48
+2000,Advent Sub-Set,24
+2000,RoboRiders,24
+2000,Star Wars,20
+2000,Knights Kingdom,17
+2000,Dino Island,15
+2000,Soccer,15
+2000,Race,12
+2000,Supplemental,8
+2000,Arctic,7
+2000,Rock Raiders,7
+2000,Throwbot Slizer,6
+2000,Disney's Mickey Mouse,5
+2000,Fairy-Tale,5
+2000,Town,5
+2000,Basic,4
+2000,Basic Model,4
+2000,Construction,4
+2000,Sports,4
+2000,Studios,4
+2000,Technic,4
+2000,Competition,3
+2000,Ninja,3
+2000,Speed Slammers,3
+2000,Train,3
+2000,Classic Basic,2
+2000,Duplo,2
+2000,Easter,2
+2000,Fire,2
+2000,Legoland Parks,2
+2000,RCX,2
+2000,Sculptures,2
+2000,Advent,1
+2000,Airport,1
+2000,Castle,1
+2000,Christmas,1
+2000,Educational and Dacta,1
+2000,Extreme Team,1
+2000,Halloween,1
+2000,Off-Road,1
+2000,Police,1
+2000,Scala,1
+2000,Soft Bricks,1
+2000,Space Port,1
+2000,Traffic,1
+2001,Studios,41
+2001,Advent Sub-Set,24
+2001,Life On Mars,18
+2001,Bulk Bricks,17
+2001,Xalax,16
+2001,Basic Set,15
+2001,My Own Train,13
+2001,Toa,13
+2001,Dinosaurs,12
+2001,Sorcerer's Stone,10
+2001,Star Wars,10
+2001,Turaga,7
+2001,Alpha Team,6
+2001,Tohunga,6
+2001,Rahi,5
+2001,Airport,4
+2001,Bionicle,4
+2001,Fairy-Tale,4
+2001,Police,4
+2001,RCX,4
+2001,Traffic,4
+2001,Creator,3
+2001,Fire,3
+2001,Soccer,3
+2001,Speed Slammers,3
+2001,Train,3
+2001,Construction,2
+2001,Duplo,2
+2001,Jurassic Park III,2
+2001,Off-Road,2
+2001,Sculptures,2
+2001,Service Packs,2
+2001,Supplemental,2
+2001,Technic,2
+2001,Castle,1
+2001,Desert,1
+2001,FIRST LEGO League,1
+2001,Harry Potter,1
+2001,Imperial Armada,1
+2001,Islanders,1
+2001,Legoland Parks,1
+2001,Other,1
+2001,Pirates I,1
+2001,Race,1
+2001,Recreation,1
+2001,Robot,1
+2001,Space,1
+2001,Station,1
+2002,Technic,62
+2002,Soccer,46
+2002,Service Packs,33
+2002,Creator,24
+2002,Drome Racers,22
+2002,Star Wars,22
+2002,Bulk Bricks,21
+2002,Mission Deep Sea,16
+2002,Airport,13
+2002,Basic Set,11
+2002,Bohrok Va,10
+2002,Island Xtreme Stunts,10
+2002,My Own Train,9
+2002,Chamber of Secrets,8
+2002,Bohrok,6
+2002,Fairy-Tale,6
+2002,Supplemental,6
+2002,Toa Nuva,6
+2002,Legoland Parks,5
+2002,Spybiotics,4
+2002,Studios,4
+2002,9V,3
+2002,Christmas,3
+2002,Holiday,3
+2002,My Own Creation,3
+2002,Sorcerer's Stone,3
+2002,Spider-Man,3
+2002,Titans,3
+2002,Castle,2
+2002,Cowboys,2
+2002,Food & Drink,2
+2002,Harry Potter,2
+2002,Indians,2
+2002,Police,2
+2002,Radio Control,2
+2002,RCX,2
+2002,Space,2
+2002,Track System,2
+2002,Basketball,1
+2002,Bionicle,1
+2002,Construction,1
+2002,Duplo,1
+2002,Fire,1
+2002,FIRST LEGO League,1
+2002,Gas Station,1
+2002,Key Chain,1
+2002,LEGO Brand Store,1
+2002,Mindstorms,1
+2002,Other,1
+2002,Pirates,1
+2002,Recreation,1
+2002,Riding Cycle,1
+2002,Sculptures,1
+2002,Traffic,1
+2002,Williams F1,1
+2003,Basketball,30
+2003,Bulk Bricks,26
+2003,Creator,26
+2003,Orient Expedition,23
+2003,Designer Sets,18
+2003,Rahkshi,18
+2003,Star Wars,17
+2003,Drome Racers,15
+2003,Technic,13
+2003,Matoran of Mata Nui,12
+2003,Basic Set,11
+2003,Clikits,10
+2003,Hockey,10
+2003,Mini,9
+2003,Police,9
+2003,Construction,8
+2003,Gravity Games,8
+2003,World City,8
+2003,Bohrok-Kal,6
+2003,Discovery,6
+2003,Titans,5
+2003,Fairy-Tale,4
+2003,Golden Land,4
+2003,Inventor,4
+2003,Mosaic,4
+2003,Airport,3
+2003,Island Xtreme Stunts,3
+2003,Legoland Parks,3
+2003,Soccer,3
+2003,Spider-Man,3
+2003,Chamber of Secrets,2
+2003,Christmas,2
+2003,Fire,2
+2003,Gas Station,2
+2003,Other,2
+2003,Radio Control,2
+2003,Seasonal,2
+2003,Supplemental,2
+2003,Traffic,2
+2003,Turaga,2
+2003,Bionicle,1
+2003,Coast Guard,1
+2003,Easter,1
+2003,Food & Drink,1
+2003,Harbor,1
+2003,Hobby Sets,1
+2003,Learning,1
+2003,Mindstorms,1
+2003,Mission Deep Sea,1
+2003,Power Racers,1
+2003,Sculptures,1
+2003,Service Packs,1
+2003,Space,1
+2003,Thanksgiving,1
+2003,Toa Metru,1
+2003,Track System,1
+2003,Train,1
+2003,Williams F1,1
+2004,Clikits,50
+2004,Knights Kingdom,30
+2004,Creator,28
+2004,Basic Set,14
+2004,X-Pod,14
+2004,Designer Sets,13
+2004,Vahki,12
+2004,Airport,10
+2004,Bulk Bricks,10
+2004,Pirates,10
+2004,Mini,9
+2004,Supplemental,9
+2004,Mission Deep Freeze,8
+2004,Prisoner of Azkaban,8
+2004,Star Wars,8
+2004,Hockey,7
+2004,Matoran of Metru Nui,6
+2004,Other,6
+2004,Toa Metru,6
+2004,Power Racers,5
+2004,Spider-Man,5
+2004,Titans,5
+2004,Ferrari,4
+2004,Playhouse,4
+2004,Christmas,3
+2004,Drome Racers,3
+2004,Easter,3
+2004,Harry Potter,3
+2004,Soccer,3
+2004,Traffic,3
+2004,Basketball,2
+2004,Bionicle,2
+2004,Coast Guard,2
+2004,Construction,2
+2004,Fairy-Tale,2
+2004,Fire,2
+2004,Gravity Games,2
+2004,Legoland Parks,2
+2004,Radio Control,2
+2004,RCX,2
+2004,Spider-Man 2,2
+2004,World City,2
+2004,9V,1
+2004,Basic Model,1
+2004,Building,1
+2004,Duplo,1
+2004,Educational and Dacta,1
+2004,FIRST LEGO League,1
+2004,Golden Land,1
+2004,Harbor,1
+2004,Holiday,1
+2004,Model Team,1
+2004,Off-Road,1
+2004,Recreation,1
+2004,Sculptures,1
+2004,Service Packs,1
+2005,Clikits,37
+2005,Knights Kingdom,26
+2005,City,24
+2005,Star Wars,20
+2005,Supplemental,17
+2005,Basic Set,13
+2005,Designer Sets,10
+2005,Construction,9
+2005,Tiny Turbos,8
+2005,Power Racers,7
+2005,Fire,6
+2005,Food & Drink,6
+2005,Police,6
+2005,Rahaga,6
+2005,Toa Hordika,6
+2005,Visorak,6
+2005,Dino 2010,5
+2005,Dino Attack,5
+2005,Duplo,5
+2005,Fairy-Tale,5
+2005,Goblet of Fire,5
+2005,Mini,5
+2005,Vikings,5
+2005,Airport,4
+2005,Other,4
+2005,Playsets,4
+2005,Titans,4
+2005,X-Pod,4
+2005,Christmas,3
+2005,Factory,3
+2005,Ferrari,3
+2005,Holiday,3
+2005,Easter,2
+2005,Gear,2
+2005,Legoland Parks,2
+2005,Toa Hagah,2
+2005,Town,2
+2005,9V,1
+2005,Creator,1
+2005,Disney's Mickey Mouse,1
+2005,FIRST LEGO League,1
+2005,Game,1
+2005,Hospital,1
+2005,Radio Control,1
+2005,Riding Cycle,1
+2005,Sculptures,1
+2005,Traffic,1
+2006,City,24
+2006,Basic Set,17
+2006,Exo-Force,16
+2006,NXT,14
+2006,Bionicle,12
+2006,Knights Kingdom,11
+2006,Star Wars,11
+2006,Tiny Turbos,11
+2006,Airport,10
+2006,Creator,10
+2006,Duplo,9
+2006,Batman,7
+2006,Matoran of Voya Nui,6
+2006,Piraka,6
+2006,Supplemental,6
+2006,Toa Inika,6
+2006,Clikits,5
+2006,Power Racers,5
+2006,Titans,5
+2006,9V,4
+2006,Construction,4
+2006,Ferrari,4
+2006,Hospital,4
+2006,Playsets,4
+2006,RC Train,4
+2006,Fairy-Tale,3
+2006,Pirates,3
+2006,Soccer,3
+2006,SpongeBob SquarePants,3
+2006,Avatar,2
+2006,Bulk Bricks,2
+2006,Creature,2
+2006,Farm,2
+2006,Model,2
+2006,Other,2
+2006,Police,2
+2006,Radio Control,2
+2006,Riding Cycle,2
+2006,Sculptures,2
+2006,Technic,2
+2006,Vikings,2
+2006,Christmas,1
+2006,Educational and Dacta,1
+2006,Fire,1
+2006,FIRST LEGO League,1
+2006,Game,1
+2006,Legoland Parks,1
+2006,Off-Road,1
+2006,Town,1
+2006,Traffic,1
+2006,Ultimate Collector Series,1
+2007,City,25
+2007,Belville,24
+2007,Exo-Force,18
+2007,Star Wars,15
+2007,Basic Set,9
+2007,Duplo,9
+2007,Tiny Turbos,9
+2007,Creator,8
+2007,Food & Drink,8
+2007,Mars Mission,8
+2007,Technic,8
+2007,Aquaraiders II,7
+2007,Construction,7
+2007,Fantasy Era,7
+2007,Power Racers,7
+2007,Barraki,6
+2007,Ferrari,6
+2007,Fire,6
+2007,Toa Mahri,6
+2007,Warriors,6
+2007,Supplemental,5
+2007,Airport,4
+2007,Bionicle,4
+2007,Matoran of Mahri Nui,4
+2007,Traffic,4
+2007,Creature,3
+2007,Fairy-Tale,3
+2007,Playsets,3
+2007,Town,3
+2007,Batman,2
+2007,Building,2
+2007,Game,2
+2007,Hospital,2
+2007,Key Chain,2
+2007,Modular Buildings,2
+2007,Mosaic,2
+2007,RC Train,2
+2007,Service Packs,2
+2007,SpongeBob SquarePants,2
+2007,Basic Model,1
+2007,Cargo,1
+2007,Coast Guard,1
+2007,Factory,1
+2007,Farm,1
+2007,FIRST LEGO League,1
+2007,Gear,1
+2007,Harbor,1
+2007,Legoland Parks,1
+2007,Model,1
+2007,Off-Road,1
+2007,Order of the Phoenix,1
+2007,Other,1
+2007,Police,1
+2007,Recreation,1
+2007,Robot,1
+2007,Sculptures,1
+2007,Soccer,1
+2008,Castle,24
+2008,City,24
+2008,Star Wars,22
+2008,Fantasy Era,13
+2008,Supplemental,11
+2008,Police,10
+2008,Basic Set,9
+2008,Coast Guard,9
+2008,Mars Mission,9
+2008,Tiny Turbos,9
+2008,Agents,8
+2008,Exo-Force,7
+2008,Kingdom of the Crystal Skull,7
+2008,Power Functions,7
+2008,Technic,7
+2008,Construction,6
+2008,Matoran of Light,6
+2008,Mistika,6
+2008,Phantoka,6
+2008,Power Racers,6
+2008,Warriors,6
+2008,Batman,5
+2008,Creator,5
+2008,LEGO Brand Store,5
+2008,Battle Vehicles,4
+2008,Bionicle,4
+2008,Speed Racer,4
+2008,Cargo,3
+2008,Duplo,3
+2008,Educational and Dacta,3
+2008,Factory,3
+2008,Ferrari,3
+2008,Fire,3
+2008,Raiders of the Lost Ark,3
+2008,SpongeBob SquarePants,3
+2008,Town,3
+2008,Traffic,3
+2008,Airport,2
+2008,Architecture,2
+2008,Building,2
+2008,Creature,2
+2008,Gear,2
+2008,Harbor,2
+2008,Learning,2
+2008,Legoland Parks,2
+2008,Off-Road,2
+2008,Other,2
+2008,Playhouse,2
+2008,Recreation,2
+2008,Sculptures,2
+2008,Collectible Minifigures,1
+2008,FIRST LEGO League,1
+2008,Game,1
+2008,Key Chain,1
+2008,Last Crusade,1
+2008,Mini,1
+2008,Modular Buildings,1
+2008,NXT,1
+2008,Racers,1
+2008,RCX,1
+2008,Riding Cycle,1
+2008,Town Plan,1
+2008,Valentine,1
+2009,Star Wars,37
+2009,City,24
+2009,Pirates,24
+2009,Power Miners,16
+2009,Basic Set,15
+2009,LEGO Brand Store,15
+2009,Construction,12
+2009,Tiny Turbos,12
+2009,Traffic,12
+2009,Game,11
+2009,Other,10
+2009,Space Police III,10
+2009,Pirates II,9
+2009,Gear,8
+2009,Creator,7
+2009,Agori,6
+2009,Christmas,6
+2009,Fantasy Era,6
+2009,Farm,6
+2009,Glatorian,6
+2009,Glatorian Legends,6
+2009,Power Functions,6
+2009,Power Racers,6
+2009,Agents,5
+2009,Battle Vehicles,5
+2009,RC Train,5
+2009,WeDo,5
+2009,Architecture,4
+2009,Books,4
+2009,Collectible Minifigures,4
+2009,Duplo,4
+2009,Educational and Dacta,4
+2009,Monthly Mini Model Build,4
+2009,Airport,3
+2009,Ferrari,3
+2009,NXT,3
+2009,Supplemental,3
+2009,Technic,3
+2009,Warriors,3
+2009,Fire,2
+2009,Last Crusade,2
+2009,Radio Control,2
+2009,Raiders of the Lost Ark,2
+2009,Riding Cycle,2
+2009,Seasonal,2
+2009,SpongeBob SquarePants,2
+2009,Temple of Doom,2
+2009,Bionicle,1
+2009,Building,1
+2009,Creature,1
+2009,FIRST LEGO League,1
+2009,Hospital,1
+2009,Kingdom of the Crystal Skull,1
+2009,Lamborghini,1
+2009,Legoland Parks,1
+2009,Modular Buildings,1
+2009,Off-Road,1
+2009,Police,1
+2009,Race,1
+2009,Racers,1
+2009,Sculptures,1
+2009,Town,1
+2009,Valentine,1
+2010,Star Wars,26
+2010,Castle,24
+2010,City,24
+2010,Atlantis,17
+2010,Series 1 Minifigures,16
+2010,Series 2 Minifigures,16
+2010,Toy Story,15
+2010,LEGO Brand Store,13
+2010,Duplo,12
+2010,Tiny Turbos,12
+2010,Basic Set,11
+2010,Kingdoms,11
+2010,Supplemental,10
+2010,Game,9
+2010,Airport,8
+2010,Other,8
+2010,World Racers,8
+2010,Gear,7
+2010,Heroes,7
+2010,Ben 10,6
+2010,Harry Potter,6
+2010,Model,6
+2010,Prince of Persia,6
+2010,Stars,6
+2010,Town,6
+2010,Traffic,6
+2010,Villains,6
+2010,Christmas,5
+2010,Construction,5
+2010,Creator,5
+2010,Fire,5
+2010,Space Police III,5
+2010,NXT,4
+2010,Power Miners,4
+2010,Power Racers,4
+2010,Educational and Dacta,3
+2010,Farm,3
+2010,Halloween,3
+2010,Sculptures,3
+2010,Architecture,2
+2010,Basic Model,2
+2010,Books,2
+2010,Easter,2
+2010,Master Building Academy,2
+2010,Monthly Mini Model Build,2
+2010,Police,2
+2010,RC Train,2
+2010,Train,2
+2010,Vehicles,2
+2010,Cars,1
+2010,Collectible Minifigures,1
+2010,FIRST LEGO League,1
+2010,Harbor,1
+2010,Lamborghini,1
+2010,Legoland Parks,1
+2010,Mini,1
+2010,Modular Buildings,1
+2010,Off-Road,1
+2010,Pirates II,1
+2010,Promotional,1
+2010,Race,1
+2010,Riding Cycle,1
+2010,Seasonal,1
+2010,Service Packs,1
+2010,Thanksgiving,1
+2010,Universe,1
+2010,Valentine,1
+2011,Star Wars,50
+2011,Ninjago,40
+2011,City,29
+2011,Cars,16
+2011,LEGO Brand Store,16
+2011,Series 3 Minifigures,16
+2011,Series 4 Minifigures,16
+2011,Series 5 Minifigures,16
+2011,Duplo,15
+2011,Pirates of the Caribbean,14
+2011,Heroes,13
+2011,Christmas,12
+2011,Game,12
+2011,Creator,11
+2011,Alien Conquest,10
+2011,Gear,10
+2011,Other,9
+2011,Pharaoh's Quest,9
+2011,Police,9
+2011,Villains,9
+2011,Harry Potter,7
+2011,Books,6
+2011,Harbor,6
+2011,Architecture,5
+2011,Atlantis,5
+2011,Basic Model,5
+2011,Model,5
+2011,Tiny Turbos,5
+2011,Basic Set,4
+2011,Construction,4
+2011,Kingdoms,4
+2011,Master Building Academy,4
+2011,Power Racers,4
+2011,Airport,3
+2011,Educational and Dacta,3
+2011,NXT,3
+2011,RC Train,3
+2011,Batman,2
+2011,Easter,2
+2011,Halloween,2
+2011,Justice League,2
+2011,Power Functions,2
+2011,Sculptures,2
+2011,SpongeBob SquarePants,2
+2011,Town,2
+2011,Castle,1
+2011,FIRST LEGO League,1
+2011,Hero Factory,1
+2011,LEGO Ideas and CUUSOO,1
+2011,Mindstorms,1
+2011,Minifig Pack,1
+2011,Modular Buildings,1
+2011,Off-Road,1
+2011,Scala,1
+2011,Seasonal,1
+2011,Superman,1
+2011,Technic,1
+2011,Valentine,1
+2012,Friends,55
+2012,Star Wars,54
+2012,Ninjago,45
+2012,Duplo,27
+2012,Advent Sub-Set,24
+2012,LEGO Brand Store,17
+2012,Creator,16
+2012,Series 6 Minifigures,16
+2012,Series 7 Minifigures,16
+2012,Series 8 Minifigures,16
+2012,Monster Fighters,14
+2012,Cars,11
+2012,Monthly Mini Model Build,11
+2012,Police,10
+2012,Batman,9
+2012,Gear,9
+2012,Heroes,9
+2012,Team GB,9
+2012,Villains,9
+2012,An Unexpected Journey,8
+2012,Avengers,8
+2012,Construction,7
+2012,Dino,7
+2012,Ferrari,7
+2012,Game,7
+2012,Other,7
+2012,Collectible Minifigures,6
+2012,Constraction,6
+2012,Fire,6
+2012,Model,6
+2012,Traffic,6
+2012,Educational and Dacta,5
+2012,Master Building Academy,5
+2012,Architecture,4
+2012,Christmas,4
+2012,Racers,4
+2012,Planet Series 2,3
+2012,Technic,3
+2012,The Fellowship of the Ring,3
+2012,The Lord of the Rings,3
+2012,The Two Towers,3
+2012,Airport,2
+2012,Basic Set,2
+2012,Easter,2
+2012,Hospital,2
+2012,Justice League,2
+2012,Minifig Pack,2
+2012,Off-Road,2
+2012,Seasonal,2
+2012,Spider-Man,2
+2012,SpongeBob SquarePants,2
+2012,X-Men,2
+2012,Basic Model,1
+2012,Books,1
+2012,Building,1
+2012,City,1
+2012,FIRST LEGO League,1
+2012,Halloween,1
+2012,Hero Factory,1
+2012,Kingdoms,1
+2012,LEGO Ideas and CUUSOO,1
+2012,Legoland,1
+2012,Minecraft,1
+2012,Mini,1
+2012,Modular Buildings,1
+2012,Sculptures,1
+2012,Service Packs,1
+2012,Superman,1
+2012,Thanksgiving,1
+2012,The Return of the King,1
+2012,Ultimate Collector Series,1
+2013,Star Wars,55
+2013,Friends,43
+2013,City,28
+2013,Creator,27
+2013,Duplo,26
+2013,Legends of Chima,23
+2013,Series 10 Minifigures,17
+2013,Speedorz,17
+2013,Series 11 Minifigures,16
+2013,Series 9 Minifigures,16
+2013,EV3,14
+2013,Monthly Mini Model Build,13
+2013,Galaxy Squad,12
+2013,Gear,12
+2013,LEGO Brand Store,12
+2013,Fire,10
+2013,Animals,9
+2013,Basic Set,9
+2013,Technic,9
+2013,Teenage Mutant Ninja Turtles,9
+2013,Heroes,8
+2013,Ninjago,8
+2013,The Lone Ranger,8
+2013,Villains,7
+2013,Coast Guard,6
+2013,Constraction,6
+2013,Legoland,6
+2013,Police,6
+2013,The Desolation of Smaug,6
+2013,Traffic,6
+2013,Airport,5
+2013,Castle,5
+2013,Educational and Dacta,5
+2013,Iron Man,5
+2013,Superman,5
+2013,Architecture,4
+2013,Batman,4
+2013,FIRST LEGO League,4
+2013,Game,4
+2013,Other,4
+2013,Seasonal,4
+2013,Books,3
+2013,Building,3
+2013,Construction,3
+2013,Key Chain,3
+2013,Master Building Academy,3
+2013,Spider-Man,3
+2013,Christmas,2
+2013,Easter,2
+2013,Minecraft,2
+2013,Planet Series 4,2
+2013,Power Functions,2
+2013,RC Train,2
+2013,The Fellowship of the Ring,2
+2013,The Return of the King,2
+2013,An Unexpected Journey,1
+2013,Cargo,1
+2013,Collectible Minifigures,1
+2013,Creature,1
+2013,Halloween,1
+2013,Hero Factory,1
+2013,Justice League,1
+2013,LEGO Ideas and CUUSOO,1
+2013,Modular Buildings,1
+2013,Pirates,1
+2013,Race,1
+2013,Sculptures,1
+2013,Soft Bricks,1
+2013,The Hobbit,1
+2013,The Two Towers,1
+2013,Valentine,1
+2014,Star Wars,57
+2014,Friends,52
+2014,The LEGO Movie,42
+2014,Legends of Chima,36
+2014,Duplo,35
+2014,City,33
+2014,Creator,24
+2014,Series 12 Minifigures,16
+2014,The Simpsons,16
+2014,Police,13
+2014,Hero Factory,12
+2014,Monthly Mini Model Build,12
+2014,Juniors,11
+2014,Animals,10
+2014,Arctic,10
+2014,Teenage Mutant Ninja Turtles,10
+2014,Series 1,9
+2014,Series 2,9
+2014,Series 3,9
+2014,Speedorz,9
+2014,Batman,8
+2014,Disney Princess,8
+2014,Ninjago,8
+2014,Promotional,8
+2014,Technic,8
+2014,Constraction,7
+2014,Minecraft,7
+2014,Guardians of the Galaxy,6
+2014,Jungle Rescue,6
+2014,LEGO Brand Store,6
+2014,Ultra Agents,6
+2014,Gear,5
+2014,Legend Beasts,5
+2014,Mini,5
+2014,Bricktober,4
+2014,Christmas,4
+2014,Fusion,4
+2014,Heroes,4
+2014,LEGO Ideas and CUUSOO,4
+2014,Spider-Man,4
+2014,The Battle of the Five Armies,4
+2014,Architecture,3
+2014,Books,3
+2014,Construction,3
+2014,Supplemental,3
+2014,Trains,3
+2014,Avengers,2
+2014,Basic Set,2
+2014,Halloween,2
+2014,Airport,1
+2014,Basic Model,1
+2014,Bionicle,1
+2014,Cars,1
+2014,Easter,1
+2014,Educational and Dacta,1
+2014,FIRST LEGO League,1
+2014,Justice League,1
+2014,Key Chain,1
+2014,Legoland Parks,1
+2014,Mindstorms,1
+2014,Minifig Pack,1
+2014,Model,1
+2014,Modular Buildings,1
+2014,Space,1
+2014,Thanksgiving,1
+2014,The Hobbit,1
+2014,Town,1
+2014,Traffic,1
+2014,Ultimate Collector Series,1
+2014,Valentine,1
+2014,Villains,1
+2014,X-Men,1
+2015,Friends,50
+2015,Star Wars,45
+2015,Ninjago,44
+2015,Duplo,32
+2015,Dimensions,31
+2015,Legends of Chima,22
+2015,Series 13 Minifigures,16
+2015,Series 14 Minifigures,16
+2015,The Simpsons,16
+2015,Mini,13
+2015,Avengers,12
+2015,Monthly Mini Model Build,12
+2015,Elves,11
+2015,Construction,9
+2015,Series 4,9
+2015,Series 5,9
+2015,Series 6,9
+2015,Juniors,8
+2015,Police,8
+2015,Traffic,8
+2015,Ultra Agents,8
+2015,Basic Model,7
+2015,Bionicle,7
+2015,Jurassic World,7
+2015,Pirates III,7
+2015,Speed Champions,7
+2015,Airjitzu,6
+2015,Basic Set,6
+2015,Creator,6
+2015,Divers,6
+2015,Pick A Model,6
+2015,Protectors,6
+2015,Toa Okoto,6
+2015,Christmas,5
+2015,Classic,5
+2015,Gear,5
+2015,Justice League,5
+2015,LEGO Ideas and CUUSOO,5
+2015,Other,5
+2015,Promotional,5
+2015,Scooby-Doo,5
+2015,Space Port,5
+2015,Batman,4
+2015,Bricktober,4
+2015,Creature,4
+2015,Disney Princess,4
+2015,Minecraft,4
+2015,Off-Road,4
+2015,Architecture,3
+2015,City,3
+2015,Marvel,3
+2015,Race,3
+2015,The LEGO Movie,3
+2015,Books,2
+2015,Building,2
+2015,Educational and Dacta,2
+2015,Fire,2
+2015,Key Chain,2
+2015,Spider-Man,2
+2015,Technic,2
+2015,Cars,1
+2015,Easter,1
+2015,FIRST LEGO League,1
+2015,Halloween,1
+2015,Harbor,1
+2015,Learning,1
+2015,LEGO Brand Store,1
+2015,Modular Buildings,1
+2015,Riding Cycle,1
+2015,Robot,1
+2015,Seasonal,1
+2015,Skull Spiders,1
+2015,Space,1
+2015,Superman,1
+2015,Thanksgiving,1
+2015,The Battle of the Five Armies,1
+2015,Town,1
+2015,Trains,1
+2015,Valentine,1
+2016,Star Wars,58
+2016,Nexo Knights,51
+2016,Friends,45
+2016,Ninjago,31
+2016,Dimensions,26
+2016,Creator,25
+2016,Bionicle,20
+2016,Disney,19
+2016,Duplo,18
+2016,DFB Minifigures,16
+2016,Series 15 Minifigures,16
+2016,Series 16 Minifigures,16
+2016,Super Heroes,14
+2016,City,13
+2016,Elves,13
+2016,Monthly Mini Model Build,13
+2016,Disney Princess,11
+2016,Technic,11
+2016,Fire,9
+2016,Series 7,9
+2016,Series 8,9
+2016,Series 9,9
+2016,Batman,8
+2016,Juniors,7
+2016,Minecraft,7
+2016,Police,7
+2016,Speed Champions,7
+2016,WeDo,7
+2016,Angry Birds,6
+2016,Pick A Model,6
+2016,Airport,5
+2016,Marvel,5
+2016,Other,5
+2016,Promotional,5
+2016,Christmas,4
+2016,LEGO Ideas and CUUSOO,4
+2016,Spider-Man,4
+2016,Architecture,3
+2016,Skylines,3
+2016,Traffic,3
+2016,Avengers,2
+2016,Brickheadz,2
+2016,Classic,2
+2016,Construction,2
+2016,Easter,2
+2016,Educational and Dacta,2
+2016,Seasonal,2
+2016,Advent,1
+2016,Airjitzu,1
+2016,Animals,1
+2016,Basic Set,1
+2016,Books,1
+2016,Building,1
+2016,FIRST LEGO League,1
+2016,Ghostbusters,1
+2016,Halloween,1
+2016,Harbor,1
+2016,Hospital,1
+2016,LEGO Brand Store,1
+2016,Legoland Parks,1
+2016,Mindstorms,1
+2016,Mini,1
+2016,Modular Buildings,1
+2016,Mosaic,1
+2016,Off-Road,1
+2016,Scooby-Doo,1
+2016,Thanksgiving,1
+2016,Valentine,1
+2017,Batman,42
+2017,Star Wars,34
+2017,Nexo Knights,19
+2017,Friends,18
+2017,Series 17 Minifigures,17
+2017,Creator,14
+2017,Brickheadz,12
+2017,Police,12
+2017,Technic,11
+2017,Super Heroes,9
+2017,Ninjago,8
+2017,Juniors,7
+2017,Marvel,7
+2017,Speed Champions,7
+2017,City,6
+2017,Classic,6
+2017,Elves,6
+2017,Minecraft,6
+2017,Monthly Mini Model Build,6
+2017,Disney Princess,4
+2017,Duplo,4
+2017,Animals,3
+2017,Guardians of the Galaxy,3
+2017,Pick A Model,3
+2017,Skylines,3
+2017,Traffic,3
+2017,Jungle,2
+2017,Mini,2
+2017,Airport,1
+2017,Architecture,1
+2017,Books,1
+2017,Creature,1
+2017,Dimensions,1
+2017,Easter,1
+2017,Fire,1
+2017,Game,1
+2017,Gear,1
+2017,LEGO Exclusive,1
+2017,LEGO Ideas and CUUSOO,1
+2017,Modular Buildings,1
+2017,Pirates of the Caribbean,1
+2017,Planet Series 3,1
+2017,Spider-Man,1
+2017,Superman,1
+2017,Valentine,1
