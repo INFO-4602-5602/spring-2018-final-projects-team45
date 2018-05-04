@@ -38,13 +38,22 @@
   	      #circle:hover path.fade {
   	        display: none;
   	      }
+  	      .row {
+			  display: flex; /* equal height of the children */
+			}
+
+			.col {
+			  flex: 1; /* additionally, equal width */
+			  /*padding: 1em;
+			  border: solid;*/
+			}
   	      aside {padding: 20px;}
   	      h1, h3 {font-size: 14px; font-weight: normal; padding-left: 40px;}
   	    </style>
   	</head>
   	<body>
-  	<div id="wrapper" >
-  		<div id="first" style="float: left;" width="300px">
+  	<div id="wrapper" class="row" >
+  		<div class="col" id="first" style="background-color:blue">
 		    <section id="diagram">
 		    	
 		    </section>
@@ -62,13 +71,13 @@
 		    	</svg>
 		    </div>
 	    </div>
-			<div data-role="rangeslider" id="vipraYearRange" >
-		        <label for="year-min-label">Year:</label>
-		        <input type="range" name="year-min" id="year-min" value="2000" min="1950" max="2018">
-		        
-		        <!-- <label for="price-max">Price:</label> -->
-		        <input type="range" name="year-max" id="year-max" value="2016" min="1950" max="2018">
-      		</div>
+		<div data-role="rangeslider" class="col" id="vipraYearRange" style="background-color:red">
+	        <label for="year-min-label">Year:</label>
+	        <input type="range" name="year-min" id="year-min" value="2000" min="1950" max="2018">
+	        
+	        <!-- <label for="price-max">Price:</label> -->
+	        <input type="range" name="year-max" id="year-max" value="2016" min="1950" max="2018">
+  		</div>
 	</div>
     
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
