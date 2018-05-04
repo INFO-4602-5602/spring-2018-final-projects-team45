@@ -50,7 +50,9 @@
     			}
 
     			.col {
-    			  flex: 1; /* additionally, equal width */
+    				padding: 25px 50px 75px 100px;
+    				border-width: 5px;
+    			  	flex: 2; /* additionally, equal width */
     			  /*padding: 1em;
     			  border: solid;*/
     			}
@@ -78,13 +80,21 @@
 		    	</svg>
 		    </div>
 	    </div>
-			<div class="col" data-role="rangeslider" id="vipraYearRange" >
-		        <label for="year-min-label">Year:</label>
+	    <div class="col">
+			<div data-role="rangeslider" id="vipraYearRange" >
+		        <label for="year-min-label">Year:</label><br/>
 		        <input type="range" name="year-min" id="year-min" value="2000" min="1950" max="2018">
-		        
-		        <!-- <label for="price-max">Price:</label> -->
 		        <input type="range" name="year-max" id="year-max" value="2016" min="1950" max="2018">
       		</div>
+      		<br/><br/><br/>
+      		<div data-role="rangeslider" id="popularThemeRange" >
+		        <label for="year-min-label">Show Top n themes:</label><br/>
+		        <input type="range" name="theme-min" id="theme-min" value="5" min="1" max="50">
+		        
+		        <!-- <label for="price-max">Price:</label> -->
+		        <!-- <input type="range" name="theme-max" id="theme-max" value="5" min="1" max="50"> -->
+      		</div>
+      	</div>
 	</div>
     
 

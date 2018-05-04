@@ -10,7 +10,7 @@ function loadChordData(f) {
   d3.csv('data/Full_Cleaned_Data.csv', function (error, data) {
 
     d3.csv('data/PopularThemes.csv', function (error, pThemes) {
-
+      console.log("Vipraaaaaaaaa");
       FullData = data;
       PopularThemes = pThemes;
       dataLoaded = true;
@@ -65,9 +65,13 @@ function filterData(topN, yearBegin, yearEnd) {
   var topNThemes = {};
   var filteredData = [];
 
+  console.log("111vipra:");
+  // console.log(PopularThemes);
   if(topN > 0) {
-    PopularThemes.forEach(function(r) {
 
+
+    PopularThemes.forEach(function(r) {
+      console.log(r);
       if (r.Year >= yearBegin && r.Year <= yearEnd) {
         if (!topThemeIndex[r.ThemeName] && topThemeIndex[r.ThemeName] != 0) {
           filteredThemesByYear.push({name: r.ThemeName, val: parseInt(r.NoOfReleasedSets)})                                    
@@ -78,6 +82,7 @@ function filterData(topN, yearBegin, yearEnd) {
       }
     });
 
+    console.log("vipra:"+filteredThemesByYear)
     filteredThemesByYear.sort(function(a,b){
       if (a.val < b.val) return 1;
       if (a.val > b.val) return -1;
