@@ -49,7 +49,7 @@
 		  }
 
 		.col {
-			padding: 25px 50px 75px 100px;
+			padding: 25px 10px 75px 20px;
 			border-width: 5px;
 		  	flex: 2;
 		}
@@ -87,6 +87,40 @@
   	      aside {padding: 20px;}
   	      h1, h3 {font-size: 14px; font-weight: normal; padding-left: 40px;}
   	    </style>
+  	    <script>
+      
+		// yearMinSlider.onchange = function() {
+		// 	yearBegin = this.value;
+		// 	yearEnd = yearMaxSlider.value;
+		//     topN = themeSlider.value;
+		    // console.log("1-yearBegin: " + yearMinSlider.value);
+		    // console.log("1-yearEnd: " + yearMaxSlider.value);
+		    // console.log("1-topN: " + themeSlider.value);
+		//     loadChordData(function() {filterData(topN,yearBegin,yearEnd);});
+		// }
+
+		// yearMaxSlider.onchange = function() {
+		// 	yearBegin = yearMinSlider.value;
+		// 	yearEnd = this.value;
+		//     topN = themeSlider.value;
+		//     console.log("2-yearBegin: " + yearMinSlider.value);
+		//     console.log("2-yearEnd: " + yearMaxSlider.value);
+		//     console.log("2-topN: " + themeSlider.value);
+		//     loadChordData(function() {filterData(topN,yearBegin,yearEnd);});
+		// }
+
+		function updateThemeSlider( val) {
+			console.log("new theme val: " + val);
+			// yearBegin = yearMinSlider.value;
+			// yearEnd = yearMaxSlider.value;
+		 //    topN = this.value;
+		 //    console.log("3-yearBegin: " + yearMinSlider.value);
+		 //    console.log("3-yearEnd: " + yearMaxSlider.value);
+		 //    console.log("3-topN: " + themeSlider.value);
+		 //    loadChordData(function() {filterData(topN,yearBegin,yearEnd);});
+		}
+
+    </script>
   	</head>
   	<body>
   	<div id="wrapper" class="row"  >
@@ -117,12 +151,12 @@
       		<br/><br/><br/>
       		<div data-role="rangeslider" id="popularThemeRange" >
 		        <label for="theme-min-label">Show Top n themes:</label><br/>
-		        <input type="range" min="1" max="50" value="5" class="slider" id="themeSlider"   >
+		        <input type="range" min="1" max="50" value="5" class="slider" id="themeSlider" onchange="updateThemeSlider(this.value)" oninput="updateThemeSlider(this.value)" >
       		</div>
-      		<p>Value: <span id="demo"></span></p>
       	</div>
 	</div>
-    <script>
+
+<script>
       
       //*******************************************************************
       //  CREATE YEAR FILTER
@@ -130,57 +164,15 @@
       	var yearMinSliderVar = document.getElementById("yearMin");
       	var yearMaxSliderVar = document.getElementById("yearMax");
       	var themeSliderVar = document.getElementById("themeSlider");
-      	var sliderDiv = document.getElementById("demo");
 
-      	yearBegin = yearMinSliderVar.value;
-		yearEnd = yearMaxSliderVar.value;
-    	topN = themeSliderVar.value;
+      	yearBegin = 2010;
+		yearEnd = 2016;
+    	topN = 5;
 
-      	console.log("yearBegin: " + yearBegin);
-	    console.log("yearEnd: " + yearEnd);
-	    console.log("topN: " + topN);
-	   
-	    sliderDiv.innerHTML = topN;
+      	console.log("yearBegin: " + yearMinSliderVar.value);
+	    console.log("yearEnd: " + yearMaxSliderVar.value);
+	    console.log("topN: " + themeSliderVar.value);
 
-
-
-		// yearMinSlider.onchange = function() {
-		// 	yearBegin = this.value;
-		// 	yearEnd = yearMaxSlider.value;
-		//     topN = themeSlider.value;
-		    // console.log("1-yearBegin: " + yearMinSlider.value);
-		    // console.log("1-yearEnd: " + yearMaxSlider.value);
-		    // console.log("1-topN: " + themeSlider.value);
-		//     loadChordData(function() {filterData(topN,yearBegin,yearEnd);});
-		// }
-
-		// yearMaxSlider.onchange = function() {
-		// 	yearBegin = yearMinSlider.value;
-		// 	yearEnd = this.value;
-		//     topN = themeSlider.value;
-		//     console.log("2-yearBegin: " + yearMinSlider.value);
-		//     console.log("2-yearEnd: " + yearMaxSlider.value);
-		//     console.log("2-topN: " + themeSlider.value);
-		//     loadChordData(function() {filterData(topN,yearBegin,yearEnd);});
-		// }
-
-		themeSliderVar.onchange = function() {
-			output.innerHTML = this.value;
-			// yearBegin = yearMinSlider.value;
-			// yearEnd = yearMaxSlider.value;
-		 //    topN = this.value;
-		 //    console.log("3-yearBegin: " + yearMinSlider.value);
-		 //    console.log("3-yearEnd: " + yearMaxSlider.value);
-		 //    console.log("3-topN: " + themeSlider.value);
-		 //    loadChordData(function() {filterData(topN,yearBegin,yearEnd);});
-		}
-
-      //*******************************************************************
-      //  DRAW CHORD CHART
-      //*******************************************************************
-
-      
-        
       // Load all Data on page load and then draw chart with default values
       loadChordData(function() {filterData(topN,yearBegin,yearEnd);});
 
