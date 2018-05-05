@@ -346,11 +346,8 @@ function drawChords (matrix, mmap) {
           .on("mouseout", function (d) { d3.select("#tooltip").style("visibility", "hidden") });
 
     function chordTip (d) {                        
-      diff = d.sdata[0] - d.tdata[0];
-      //console.log(d);
-      return d.sname+": "+d.sdata[0]+"<br/>" +
-             d.tname+": "+d.tdata[0]+"<br/>" + 
-             "Difference: " + Math.abs(diff);
+      return "<b>" +d.sname+"</b><br/>   # sets: "+d.sdata[0]+"<br/>" +
+             "<b>" +d.tname+"</b><br/>   # sets: "+d.tdata[0]+"<br/>";
     }
 
     function mouseover(d, i) {
@@ -358,7 +355,7 @@ function drawChords (matrix, mmap) {
         .style("visibility", "visible")
         .html(function(){
           f = rdr(d);
-          return f.cname.substring(f.cname.indexOf("-")+1)+': '+f.cdata[0];
+          return "Theme: " + f.cname.substring(f.cname.indexOf("-")+1)+'<br/> # sets: '+f.cdata[0];
         })
         .style("top", function () { return (d3.event.pageY - 50)+"px"})
         .style("left", function () { return (d3.event.pageX - 90)+"px";})
