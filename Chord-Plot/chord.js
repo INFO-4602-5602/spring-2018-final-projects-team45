@@ -3,14 +3,17 @@
 //*******************************************************************
 var FullData, PopularThemes;
 var dataLoaded = false;
+// var themeSliderId = document.getElementById("themeSlider");
 
+// themeSliderId.onchange = function() {
+//   alert(this.value);
+// }
 
 
 function loadChordData(f) {
   d3.csv('data/Full_Cleaned_Data.csv', function (error, data) {
 
     d3.csv('data/PopularThemes.csv', function (error, pThemes) {
-      console.log("Vipraaaaaaaaa");
       FullData = data;
       PopularThemes = pThemes;
       dataLoaded = true;
@@ -57,6 +60,8 @@ function changeData(topN, yB, yE) {
 
 function filterData(topN, yearBegin, yearEnd) {
   
+
+  console.log("Top n are:" + topN)
   var n = 0;
 
   var filteredThemesByYear = [];
@@ -65,13 +70,10 @@ function filterData(topN, yearBegin, yearEnd) {
   var topNThemes = {};
   var filteredData = [];
 
-  console.log("111vipra:");
-  // console.log(PopularThemes);
   if(topN > 0) {
 
 
     PopularThemes.forEach(function(r) {
-      console.log(r);
       if (r.Year >= yearBegin && r.Year <= yearEnd) {
         if (!topThemeIndex[r.ThemeName] && topThemeIndex[r.ThemeName] != 0) {
           filteredThemesByYear.push({name: r.ThemeName, val: parseInt(r.NoOfReleasedSets)})                                    
@@ -82,7 +84,6 @@ function filterData(topN, yearBegin, yearEnd) {
       }
     });
 
-    console.log("vipra:"+filteredThemesByYear)
     filteredThemesByYear.sort(function(a,b){
       if (a.val < b.val) return 1;
       if (a.val > b.val) return -1;
@@ -91,7 +92,6 @@ function filterData(topN, yearBegin, yearEnd) {
       return 0;
     })
 
-    //console.log(filteredThemesByYear);              
     filteredThemesByYear.some(function(r) {
       if (!topNThemes[r.name]) {
         topNThemes[r.name] = 1;
@@ -111,7 +111,6 @@ function filterData(topN, yearBegin, yearEnd) {
     }
   })
 
-  console.log(topNThemes);
   plotData(filteredData);
     
 }
