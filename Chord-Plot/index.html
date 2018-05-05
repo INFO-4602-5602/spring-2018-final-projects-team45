@@ -12,17 +12,22 @@
       <script src="chord.js"></script>
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
   	    <style>
   	        @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
   	      	
-  	      	body {font-family: "Source Code Pro", Consolas, monaco, monospace;
-  	      	background-color: #ffe0b3; 
-  	      	line-height: 160%; font-size: 14px;  margin: 0; }
-	  	      #tooltip {
-	  	        color: #454545;
+  	      	body {
+  	      		font-family: "Source Code Pro", Consolas, monaco, monospace;
+  	      		line-height: 160%;
+  	      		font-size: 14px;  
+  	      		margin: 0; 
+  	      	}
+  	      	#body-content {
+  	      		overflow: hidden;
+  	      	}
+	  	    #tooltip {
+	  	        /*color: #454545;*/
 	  	        opacity: .9;
-	  	        /*background: #eee;*/
+	  	        background: #eee;
 	  	        padding: 5px;
 	  	        border: none;
 	  	        border-radius: 5px;
@@ -31,31 +36,31 @@
 	  	        visibility: hidden;
 	  	        white-space: nowrap;
 	  	        pointer-events: none;
-	  	      }
-  	      #circle circle {
-  	        fill: none;
-  	        pointer-events: all;
-  	      }
-  	      path.group {
-  	        fill-opacity: .8;
-  	      }
-  	      path.chord {
-  	        fill-opacity: .8;
-  	        stroke: #000;
-  	        stroke-width: .25px;
-  	      }
-  	      #circle:hover path.fade {
-  	        display: none;
-  	      }
-  	      .row {
-			  display: flex; /* equal height of the children */
-		  }
+	  	    }
+  	        #circle circle {
+  	        	fill: none;
+  	        	pointer-events: all;
+	  	    }
+	  	    path.group {
+	  	        fill-opacity: .8;
+	  	    }
+	  	    path.chord {
+	  	        fill-opacity: .8;
+	  	        stroke: #000;
+	  	        stroke-width: .25px;
+	  	    }
+	  	    #circle:hover path.fade {
+	  	        display: none;
+	  	    }
+	  	    .row {
+				  display: flex; /* equal height of the children */
+			}
 
-		.col {
-			padding: 25px 10px 75px 20px;
-			border-width: 5px;
-		  	flex: 2;
-		}
+			.col {
+				padding: 25px 10px 75px 20px;
+				border-width: 5px;
+		  		flex: 2;
+			}
 
 			.slider {
 			    -webkit-appearance: none;
@@ -87,8 +92,12 @@
 			    cursor: pointer;
 			}
 
-  	      aside {padding: 20px;}
-  	      h1, h3 {padding-left: 40px;}
+  	      	aside {
+  	      		padding: 20px;
+  	      	}
+  	      	h1, h3 {
+  	      		padding-left: 40px;
+  	      	}
   	    </style>
   	    <script>
       
@@ -125,61 +134,65 @@
 
     </script>
   	</head>
-  	<body style="background-color: #ffe0b3">
-  	<h1 align="center"> Visualization showing different Lego set themes over the years and the popularity change through years.</h1>
+  	<body >
+  	<div style="background-color: #ffe0b3"> 
+	  	<div >
+		  	<h1 align="center" > Visualization showing different Lego set themes over the years and the popularity change through years.</h1>
 
-  	<br/><br/><br/>
-  	<h2 id="descriptionh2" class="descriptionh2">Description (click me)</h2>
-  	<ul id="description" class="description" style="width:50%; padding: 5px 5px 10px 50px; display: none;">
-	  <li >The outer ring of the chord shows the year.</li>
-	  <li>The inner ring shows the top n themes in that year.</li>
-	  <li>When you hover on a theme, it shows the number of sets in that theme for that year.</li>
-	  <li>Band going from one theme to another show the relation between the number of sets for same theme in different years. </li>
-	  <li width="100px">If the color of the band remains same, as the main color of the theme, that means that the number of sets was greater in this year compared to the year it is getting compared. If the color changes, that means the other year's number of sets was higher.</li>
-	</ul>
-  	
-  	<div id="wrapper" class="row"  >
+		  	<br/><br/><br/>
+		  	<h2 ><a id="descriptionh2" class="descriptionh2">Description (click me) </a></h2>
+		  	<ul id="description" class="description" style="width:50%; padding: 5px 5px 10px 50px; background-color: #ffe0b3">
+			  <li >The outer ring of the chord shows the year.</li>
+			  <li>The inner ring shows the top n themes in that year.</li>
+			  <li>When you hover on a theme, it shows the number of sets in that theme for that year.</li>
+			  <li>Band going from one theme to another show the relation between the number of sets for same theme in different years. </li>
+			  <li width="100px">If the color of the band remains same, as the main color of the theme, that means that the number of sets was greater in this year compared to the year it is getting compared. If the color changes, that means the other year's number of sets was higher.</li>
+			</ul>
+	  	</div>
+	  	<div id="wrapper" class="row" >
 
-  		<div class="col" id="first" >
-		    <section id="diagram">
-		    	
-		    </section>
-		    <div id="tooltip">
-		    	
+	  		<div class="col" id="first" >
+			    <section id="diagram">
+			    	
+			    </section>
+			    <div id="tooltip">
+			    	
+			    </div>
+			    <div id="something">
+			    	<svg height="6" width="6" xmlns="http://www.w3.org/2000/svg" version="1.1"> 
+				    	<defs> 
+				    		<pattern id="whitecarbon" patternUnits="userSpaceOnUse" width="6" height="6"> 
+				    			<image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNicgaGVpZ2h0PSc2Jz4KICA8cmVjdCB3aWR0aD0nNicgaGVpZ2h0PSc2JyBmaWxsPScjZWVlZWVlJy8+CiAgPGcgaWQ9J2MnPgogICAgPHJlY3Qgd2lkdGg9JzMnIGhlaWdodD0nMycgZmlsbD0nI2U2ZTZlNicvPgogICAgPHJlY3QgeT0nMScgd2lkdGg9JzMnIGhlaWdodD0nMicgZmlsbD0nI2Q4ZDhkOCcvPgogIDwvZz4KICA8dXNlIHhsaW5rOmhyZWY9JyNjJyB4PSczJyB5PSczJy8+Cjwvc3ZnPg==" x="0" y="0" width="6" height="6"> 
+				    			</image> 
+				    		</pattern> 
+				    	</defs> 
+			    	</svg>
+			    </div>
 		    </div>
-		    <div id="something">
-		    	<svg height="6" width="6" xmlns="http://www.w3.org/2000/svg" version="1.1"> 
-			    	<defs> 
-			    		<pattern id="whitecarbon" patternUnits="userSpaceOnUse" width="6" height="6"> 
-			    			<image xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNicgaGVpZ2h0PSc2Jz4KICA8cmVjdCB3aWR0aD0nNicgaGVpZ2h0PSc2JyBmaWxsPScjZWVlZWVlJy8+CiAgPGcgaWQ9J2MnPgogICAgPHJlY3Qgd2lkdGg9JzMnIGhlaWdodD0nMycgZmlsbD0nI2U2ZTZlNicvPgogICAgPHJlY3QgeT0nMScgd2lkdGg9JzMnIGhlaWdodD0nMicgZmlsbD0nI2Q4ZDhkOCcvPgogIDwvZz4KICA8dXNlIHhsaW5rOmhyZWY9JyNjJyB4PSczJyB5PSczJy8+Cjwvc3ZnPg==" x="0" y="0" width="6" height="6"> 
-			    			</image> 
-			    		</pattern> 
-			    	</defs> 
-		    	</svg>
-		    </div>
-	    </div>
-	    <div class="col" style="padding: 50px 5px 10px 100px;">
-			<div data-role="rangeslider" id="vipraYearRange" >
-		        <label for="year-min-label">Year:</label><br/>
-		        <input type="range" name="year-min" class="slider" id="yearMin" value="2010" min="1950" max="2018" step="3">
-		        <input type="range" name="year-max" class="slider" id="yearMax" value="2016" min="1950" max="2018" step="3">
-      		</div>
-      		<br/><br/><br/>
-      		<div data-role="rangeslider" id="popularThemeRange" >
-		        <label for="theme-min-label">Show Top n themes:</label><br/>
-		        <input type="range" min="1" max="50" value="5" class="slider" id="themeSlider" onchange="updateThemeSlider(this.value)" oninput="updateThemeSlider(this.value)" >
-      		</div>
-      	</div>
+		    <div class="col" style="padding: 50px 5px 10px 100px;">
+				<div data-role="rangeslider" id="vipraYearRange" >
+			        <label for="year-min-label">Year:</label><br/>
+			        <input type="range" name="year-min" class="slider" id="yearMin" value="2010" min="1950" max="2018" step="3">
+			        <input type="range" name="year-max" class="slider" id="yearMax" value="2016" min="1950" max="2018" step="3">
+	      		</div>
+	      		<br/><br/><br/>
+	      		<div data-role="rangeslider" id="popularThemeRange" >
+			        <label for="theme-min-label">Show Top n themes:</label><br/>
+			        <input type="range" min="1" max="50" value="5" class="slider" id="themeSlider" onchange="updateThemeSlider(this.value)" oninput="updateThemeSlider(this.value)" >
+	      		</div>
+	      	</div>
+		</div>
+
 	</div>
-
 <script>
       
         $(".descriptionh2").click(function () {
-		    // Hide it but only if not hidden - hide
-		    $('.description:visible').hide();
-
-		    // Later in the script - Show it but only If it's not visible.  
-		    $('.description:hidden').show();
+		    if($('#description').css('display') == 'none')
+			{
+				$('.description').show();
+			} else {
+				$('.description').hide();
+			}
 		});
       //*******************************************************************
       //  CREATE YEAR FILTER
