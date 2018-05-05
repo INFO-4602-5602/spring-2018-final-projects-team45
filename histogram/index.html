@@ -1,0 +1,260 @@
+<html>
+<title>Histogram/Pie Chart</title>
+<meta charset="utf-8">
+<style>
+body{
+    width:1060px;
+    margin:50px auto;
+}
+path {  stroke: #fff; }
+path:hover {  opacity:0.9; }
+rect:hover {  fill:blue; }
+.axis {  font-family: 10px "Source Code Pro" ; }
+.legend tr{    border-bottom:1px solid grey; }
+.legend tr:first-child{    border-top:1px solid grey; }
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {  display: none; }
+.legend{
+    margin-bottom:76px;
+    display:inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+.legend td{
+    padding:4px 5px;
+    vertical-align:bottom;
+}
+.legendFreq, .legendPerc{
+    align:right;
+    width:50px;
+}
+
+</style>
+<body>
+<h0><font size="7"><center><u>Number of Sets Based on Year</u></center></font></h0><br>
+<div id='dashboard'>
+</div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+//Source: http://bl.ocks.org/NPashaP/96447623ef4d342ee09b
+function dashboard(id, fData){
+    var barColor = 'steelblue';
+    function segColor(c){ return {starwars:"#807dba", city:"#e08214",ninjago:"#41ab5d",friends:"black", other: "#e60000"}[c]; }
+    
+    //total for each year
+    fData.forEach(function(d){d.total=d.freq.starwars+d.freq.city+d.freq.ninjago+d.freq.other+d.freq.friends;});
+    
+    //function for histogram
+    function histoGram(fD){
+        var hG={},    hGDim = {t: 60, r: 0, b: 30, l: 0};
+        hGDim.w = 500 - hGDim.l - hGDim.r, 
+        hGDim.h = 300 - hGDim.t - hGDim.b;
+            
+        //create svg 1
+        var hGsvg = d3.select(id).append("svg")
+            .attr("width", hGDim.w + hGDim.l + hGDim.r)
+            .attr("height", hGDim.h + hGDim.t + hGDim.b).append("g")
+            .attr("transform", "translate(" + hGDim.l + "," + hGDim.t + ")");
+
+        //function for x-axis
+        var x = d3.scale.ordinal().rangeRoundBands([0, hGDim.w], 0.1)
+                .domain(fD.map(function(d) { return d[0]; }));
+
+        //Add to svg1
+        hGsvg.append("g").attr("class", "x axis")
+            .attr("transform", "translate(0," + hGDim.h + ")")
+            .call(d3.svg.axis().scale(x).orient("bottom"));
+
+        //function for y-axis
+        var y = d3.scale.linear().range([hGDim.h, 0])
+                .domain([0, d3.max(fD, function(d) { return d[1]; })]);
+
+        //bars for histogram
+        var bars = hGsvg.selectAll(".bar").data(fD).enter()
+                .append("g").attr("class", "bar");
+        
+        //create the bars
+        bars.append("rect")
+            .attr("x", function(d) { return x(d[0]); })
+            .attr("y", function(d) { return y(d[1]); })
+            .attr("width", x.rangeBand())
+            .attr("height", function(d) { return hGDim.h - y(d[1]); })
+            .attr('fill',barColor)
+            .on("mouseover",mouseover)//mouseover is defined below.
+            .on("mouseout",mouseout);//mouseout is defined below.
+            
+        //labels above bar
+        bars.append("text").text(function(d){ return d3.format(",")(d[1])})
+            .attr("x", function(d) { return x(d[0])+x.rangeBand()/2; })
+            .attr("y", function(d) { return y(d[1])-5; })
+            .attr("text-anchor", "middle");
+        
+        function mouseover(d){  //mouseover function
+            //filter based on year
+            var st = fData.filter(function(s){ return s.Year == d[0];})[0],
+                nD = d3.keys(st.freq).map(function(s){ return {type:s, freq:st.freq[s]};});
+               
+            //updates on legend   
+            pC.update(nD);
+            leg.update(nD);
+        }
+        
+        function mouseout(d){    //mouseout
+            //reset the pie-chart to original   
+            pC.update(tF);
+            leg.update(tF);
+        }
+        
+        //update based on interactive pie chart 
+        hG.update = function(nD, color){
+            //y-axis range
+            y.domain([0, d3.max(nD, function(d) { return d[1]; })]);
+            
+            //Attach data
+            var bars = hGsvg.selectAll(".bar").data(nD);
+            
+            //height and color of bars
+            bars.select("rect").transition().duration(500)
+                .attr("y", function(d) {return y(d[1]); })
+                .attr("height", function(d) { return hGDim.h - y(d[1]); })
+                .attr("fill", color);
+
+            bars.select("text").transition().duration(500)
+                .text(function(d){ return d3.format(",")(d[1])})
+                .attr("y", function(d) {return y(d[1])-5; });            
+        }        
+        return hG;
+    }
+    
+    //Function for pie
+    function pieChart(pD){
+        var pC ={},    pieDim ={w:250, h: 250};
+        pieDim.r = Math.min(pieDim.w, pieDim.h) / 2;
+                
+        //create svg 2 
+        var piesvg = d3.select(id).append("svg")
+            .attr("width", pieDim.w).attr("height", pieDim.h).append("g")
+            .attr("transform", "translate("+pieDim.w/2+","+pieDim.h/2+")");
+        
+        //function for arcs
+        var arc = d3.svg.arc().outerRadius(pieDim.r - 10).innerRadius(0);
+
+        //angles for each slice
+        var pie = d3.layout.pie().sort(null).value(function(d) { return d.freq; });
+
+        //Draw the pie slices.
+        piesvg.selectAll("path").data(pie(pD)).enter().append("path").attr("d", arc)
+            .each(function(d) { this._current = d; })
+            .style("fill", function(d) { return segColor(d.data.type); })
+            .on("mouseover",mouseover).on("mouseout",mouseout);
+
+        //Update pie based on histogram
+        pC.update = function(nD){
+            piesvg.selectAll("path").data(pie(nD)).transition().duration(500)
+                .attrTween("d", arcTween);
+        }        
+        //mouseover
+        function mouseover(d){
+            // update histogram with selected values
+            hG.update(fData.map(function(v){ 
+                return [v.Year,v.freq[d.data.type]];}),segColor(d.data.type));
+        }
+        //mouseout
+        function mouseout(d){
+            hG.update(fData.map(function(v){
+                return [v.Year,v.total];}), barColor);
+        }
+        //paths for pie chart and drawing them
+        function arcTween(a) {
+            var i = d3.interpolate(this._current, a);
+            this._current = i(0);
+            return function(t) { return arc(i(t));    };
+        }    
+        return pC;
+    }
+    
+    //function for legend
+    function legend(lD){
+        var leg = {};
+            
+        //create table
+        var legend = d3.select(id).append("table").attr('class','legend');
+        
+        //one row for each theme
+        var tr = legend.append("tbody").selectAll("tr").data(lD).enter().append("tr");
+            
+        //first column
+        tr.append("td").append("svg").attr("width", '16').attr("height", '16').append("rect")
+            .attr("width", '16').attr("height", '16')
+			.attr("fill",function(d){ return segColor(d.type); });
+            
+        //second column
+        tr.append("td").text(function(d){ return d.type;});
+
+        //third column
+        tr.append("td").attr("class",'legendFreq')
+            .text(function(d){ return d3.format(",")(d.freq);});
+
+        //fourth column
+        tr.append("td").attr("class",'legendPerc')
+            .text(function(d){ return getLegend(d,lD);});
+
+        //Legend update
+        leg.update = function(nD){
+            //data for each row
+            var l = legend.select("tbody").selectAll("tr").data(nD);
+
+            //update the frequencies.
+            l.select(".legendFreq").text(function(d){ return d3.format(",")(d.freq);});
+
+            //update the percentage column.
+            l.select(".legendPerc").text(function(d){ return getLegend(d,nD);});        
+        }
+        
+        function getLegend(d,aD){ // compute percentage
+            return d3.format("%")(d.freq/d3.sum(aD.map(function(v){ return v.freq; })));
+        }
+
+        return leg;
+    }
+    
+    //calculate total frequency by segment for all Years.
+    var tF = ['starwars','city','ninjago','friends','other'].map(function(d){ 
+        return {type:d, freq: d3.sum(fData.map(function(t){ return t.freq[d];}))}; 
+    });    
+    
+    //calculate total frequency by year for all segment.
+    var sF = fData.map(function(d){return [d.Year,d.total];});
+
+    var hG = histoGram(sF), //create the histogram.
+        pC = pieChart(tF), //pie-chart.
+        leg= legend(tF);  //legend.
+}
+</script>
+
+<script>
+//We first had to run some queries to get this data and loaded it in
+var freqData=[
+{Year:'2008',freq:{starwars:24, city:22, ninjago:0, friends:0, other:262}}
+,{Year:'2009',freq:{starwars:37, city:24, ninjago:0, friends:0, other:303}}
+,{Year:'2010',freq:{starwars:26, city:24, ninjago:0, friends:0, other:339}}
+,{Year:'2011',freq:{starwars:50, city:29, ninjago:40, friends:0, other:318}}
+,{Year:'2012',freq:{starwars:54, city:1, ninjago:45, friends:55, other:381}}
+,{Year:'2013',freq:{starwars:55, city:28, ninjago:8, friends:43, other:409}}
+,{Year:'2014',freq:{starwars:57, city:33, ninjago:8, friends:52, other:440}}
+,{Year:'2015',freq:{starwars:45, city:3, ninjago:44, friends:50, other:440}}
+,{Year:'2016',freq:{starwars:58, city:13, ninjago:31, friends:45, other:436}}
+,{Year:'2017',freq:{starwars:34, city:6, ninjago:8, friends:18, other:225}}
+];
+
+dashboard('#dashboard',freqData);
+</script>
+</body>
+</html>
