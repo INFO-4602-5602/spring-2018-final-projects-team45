@@ -22,7 +22,7 @@
   	        @import url(http://fonts.googleapis.com/css?family=Source+Code+Pro:400,600);
   	      	
   	      	body {font-family: "Source Code Pro", Consolas, monaco, monospace;
-  	      	background-color: #ffe0b3; 
+  	      	/*background-color: #D1AE45; */
   	      	line-height: 160%; font-size: 14px;  margin: 0; }
 	  	      #tooltip {
 	  	        color: #454545;
@@ -67,7 +67,7 @@
 			    width: 100%;
 			    height: 15px;
 			    border-radius: 5px;   
-			    background: #d3d3d3;
+			    background: blue;
 			    outline: none;
 			    opacity: 0.7;
 			    -webkit-transition: .2s;
@@ -105,44 +105,21 @@
   	    </style>
   	    <script>
       
-		// yearMinSlider.onchange = function() {
-		// 	yearBegin = this.value;
-		// 	yearEnd = yearMaxSlider.value;
-		//     topN = themeSlider.value;
-		    // console.log("1-yearBegin: " + yearMinSlider.value);
-		    // console.log("1-yearEnd: " + yearMaxSlider.value);
-		    // console.log("1-topN: " + themeSlider.value);
-		//     loadChordData(function() {filterData(topN,yearBegin,yearEnd);});
-		// }
-
-		// yearMaxSlider.onchange = function() {
-		// 	yearBegin = yearMinSlider.value;
-		// 	yearEnd = this.value;
-		//     topN = themeSlider.value;
-		//     console.log("2-yearBegin: " + yearMinSlider.value);
-		//     console.log("2-yearEnd: " + yearMaxSlider.value);
-		//     console.log("2-topN: " + themeSlider.value);
-		//     loadChordData(function() {filterData(topN,yearBegin,yearEnd);});
-		// }
 
 		function updateThemeSlider( val) {
 			console.log("new theme val: " + val);
-			// yearBegin = yearMinSlider.value;
-			// yearEnd = yearMaxSlider.value;
-		 //    topN = this.value;
-		 //    console.log("3-yearBegin: " + yearMinSlider.value);
-		 //    console.log("3-yearEnd: " + yearMaxSlider.value);
-		 //    console.log("3-topN: " + themeSlider.value);
-		 //    loadChordData(function() {filterData(topN,yearBegin,yearEnd);});
 		}
+    // function updateTextInput(val) {
+    //   document.getElementById('custom-handle1').value=val; 
+    // }
 
     </script>
   	</head>
-  	<body style="background-color: #ffe0b3">
+  	<body style="background-color:#FFEE4D">
   	<h1 align="center"> Visualization showing different Lego set themes over the years and the popularity change through years.</h1>
 
   	<br/><br/><br/>
-  	<h2 id="descriptionh2" class="descriptionh2">Description (click me)</h2>
+  	<h2 id="descriptionh2" class="descriptionh2" style="padding: 0px 5px 30px 5px;">Description (click me)</h2>
   	<ul id="description" class="description" style="width:50%; padding: 5px 5px 10px 50px; display: none;">
 	  <li >The outer ring of the chord shows the year.</li>
 	  <li>The inner ring shows the top n themes in that year.</li>
@@ -151,24 +128,22 @@
 	  <li width="100px">If the color of the band remains same, as the main color of the theme, that means that the number of sets was greater in this year compared to the year it is getting compared. If the color changes, that means the other year's number of sets was higher.</li>
 	</ul>
   	
-  	<div id="wrapper" class="row"  >
-
+  	<div id="wrapper" class="row" style="border-top:3px solid grey;" >
+    <label for="theme-min-label" style="font-size: 20px; padding: 80px 5px 10px 10px;"><b>Filters:</b></label><br/>
   		<div class="col" id="first" >
-        <div class="col" style="padding: 50px 5px 10px 100px;">                                    
+        <div class="col" style="padding: 5px 1000px 10px 100px;">                                    
 
           <div data-role="rangeslider" id="yearRange" >
-            <label for="year-min-label">Year:</label><br/>
+
+            <label for="year-min-label" style="font-size: 18px;"><b>Year:</b></label><br/>
             <div id="slider-range">
-              <div id="custom-handle1" class="ui-slider-handle"></div>
+              <div id="custom-handle1" class="ui-slider-handle" ></div>
               <div id="custom-handle2" class="ui-slider-handle"></div>
             </div>
-            <!-- <input type="range" name="year-min" class="slider" id="yearMin" value="2010" min="1950" max="2018" step="3" oninput="updateThemeSlider(this.value)">
-            <input type="range" name="year-max" class="slider" id="yearMax" value="2016" min="1950" max="2018" step="3" oninput="updateThemeSlider(this.value)" > -->
           </div>
-          <br/><br/><br/>
+          <br/><br/>
           <div data-role="rangeslider" id="popularThemeRange" >
-            <label for="theme-min-label">Show Top n themes:</label><br/>
-            <!--<input type="range" min="1" max="50" value="5" class="slider" id="themeSlider" onchange="updateThemeSlider(this.value)" oninput="updateThemeSlider(this.value)" > -->
+            <label for="theme-min-label" style="font-size: 18px;"><b>Show Top n themes:</b></label><br/>
             <div id="slider-range2">
               <div id="custom-handle3" class="ui-slider-handle"></div>
             </div>
@@ -197,12 +172,8 @@
 <script>
       
         $(".descriptionh2").click(function () {
-		    // Hide it but only if not hidden - hide
-		    $('.description').toggle("slow");
-
-		    // Later in the script - Show it but only If it's not visible.  
-		    //$('.description:hidden').show();
-		});
+    		  $('.description').toggle("slow");
+    		});
       //*******************************************************************
       //  CREATE YEAR FILTER
       //*******************************************************************
@@ -214,14 +185,14 @@
       // Load all Data on page load and then draw chart with default values
       loadChordData(function() {filterData(topN,yearBegin,yearEnd);});
 
-      $( function() {
+      $(function() {
         var handle1 = $( "#custom-handle1" );
         var handle2 = $( "#custom-handle2" );
-        $( "#slider-range" ).slider({
+        $("#slider-range" ).slider({
           range: true,
           min: 1950,
           max: 2017,
-          values: [ 2010, 2016 ],          
+          values: [ 1990, 2000 ],         
           slide: function( event, ui ) {
             if (ui.handleIndex == 0) {
               handle1.text(ui.values[ui.handleIndex]);
@@ -231,21 +202,14 @@
               handle2.text(ui.values[ui.handleIndex]);
               yearEnd = ui.values[ui.handleIndex];
             }
-            
             changeData(topN,yearBegin,yearEnd);
-            console.log("Slider Range 1 values: ", ui.values[ 0 ], ui.values[ 1 ], ui.handleIndex);
-            //$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
           }
         });
-        //console.log("Slider Range 1 values: ", $( "#slider-range" ).slider( "values", 0 ), '-', $( "#slider-range" ).slider( "values", 1 ));
-        //$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-        //  " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-      } );
+      });
 
-      $( function() {
-
+      $(function() {
         var handle = $( "#custom-handle3" );
-        $( "#slider-range2" ).slider({
+        $("#slider-range2" ).slider({
           min: 1,
           max: 300,
           value: 5,
@@ -255,11 +219,9 @@
           slide: function( event, ui ) {
             handle.text( ui.value );
             topN = ui.value;
-            console.log("Slider Range2 values: ", ui.value);
             changeData(topN,yearBegin,yearEnd);
           }
         });        
-        //$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
       } );
 
       

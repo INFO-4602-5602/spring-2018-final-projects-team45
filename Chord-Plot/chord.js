@@ -61,7 +61,7 @@ function changeData(topN, yB, yE) {
 function filterData(topN, yearBegin, yearEnd) {
   
 
-  console.log("Top n are:" + topN)
+  // console.log("Top n are:" + topN)
   var n = 0;
 
   var filteredThemesByYear = [];
@@ -131,7 +131,7 @@ function plotData(data) {
     });
 
 
-  console.log(mpr.getMap());
+  // console.log(mpr.getMap());
 
   drawChords(mpr.getMatrix(), mpr.getMap());
 
@@ -202,8 +202,8 @@ function drawChords (matrix, mmap) {
     year_chord_groups.push(yearMap[d]);
   })
   
-  console.log(chord.groups());
-  console.log(mmap);        
+  // console.log(chord.groups());
+  // console.log(mmap);        
 
   var outerCircle_g = outersvg.selectAll("g.group")
       .data(year_chord_groups)
@@ -264,25 +264,17 @@ function drawChords (matrix, mmap) {
             .attr("class", "hiddenArcs")
             .attr("id", "hiddenArc"+i)
             .attr("d", newArc)
-            //.style("fill", "url(#diagonal-stripe-1)");
             .style("fill", "none");
 
       });          
 
   outerCircle_g.append("svg:text")
       .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; d.x = (d.endAngle - d.startAngle)*outer_r0; })
-      .attr("x", function(d) { return d.x/2; })
-      //.attr("dy", 15)
-      //.attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })     
-      //.attr("transform", function(d) {
-      //  return "rotate(" + ((d.angle > 2*Math.PI/4 && d.angle < 2*Math.PI*3/4)? "180":"0") + ")";                  
-      //})       
+      .attr("x", function(d) { return d.x/2; })      
       .attr("dy", function(d,i) {
           return ((d.angle > 2*Math.PI/4 && d.angle < 2*Math.PI*3/4)? -5 : 15);
       })
       .append("textPath")
-      //.attr("xlink:href", function(d,i) { return "#yearArc_"+i; })
-      //.attr("startOffset","50%")
       .style("text-anchor","middle")
       .attr("xlink:href",function(d,i){return ((d.angle > 2*Math.PI/4 && d.angle < 2*Math.PI*3/4)? "#hiddenArc"+i:"#yearArc_"+i);})
       .text(function(d) { return d.data; })
@@ -355,7 +347,7 @@ function drawChords (matrix, mmap) {
         .style("visibility", "visible")
         .html(function(){
           f = rdr(d);
-          return "Theme: " + f.cname.substring(f.cname.indexOf("-")+1)+'<br/> # sets: '+f.cdata[0];
+          return "<b>Theme: " + f.cname.substring(f.cname.indexOf("-")+1)+'</b><br/> <b> # sets:'+f.cdata[0] + "</b>";
         })
         .style("top", function () { return (d3.event.pageY - 50)+"px"})
         .style("left", function () { return (d3.event.pageX - 90)+"px";})
@@ -368,7 +360,7 @@ function drawChords (matrix, mmap) {
     function onclick(d,i) {            
       name = rdr(d).cname; 
       name = name.substring(name.indexOf("-")+1);   
-      console.log(themeIndexes[name]);           
+      // console.log(themeIndexes[name]);           
       chordPaths.classed("fade", function(p) {
         //console.log(d3.select(this).attr("id"), !(p.source.index in themeIndexes[name] || p.target.index in themeIndexes[name]));
         return !(themeIndexes[name].includes(p.source.index) || themeIndexes[name].includes(p.target.index));
